@@ -8,8 +8,13 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    minWidth: 800,
+    minHeight: 600,
+    maxWidth: 800,
+    maxHeight: 600,
+    autoHideMenuBar: true,
     webPreferences: {
-      nodeIntegration: true, // Permite o uso do Node.js no arquivo index.html
+      nodeIntegration: true,
       contextIsolation: false // Desabilita o isolamento de contexto para suportar o require no renderer process
     }
   });

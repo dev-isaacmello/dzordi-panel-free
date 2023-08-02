@@ -1,21 +1,22 @@
 {
     "name": "sua_app",
     "version": "1.0.0",
-    "description": "Uma aplicação desktop com Electron",
+    "description": "Vip Panel",
     "main": "main.js",
     "scripts": {
+      "package-win": "electron-builder --win",
       "start": "electron .",
       "package": "electron-builder",
       "postinstall": "electron-builder install-app-deps"
     },
-    "author": "Seu Nome",
+    "author": "Dzordi Community",
     "license": "MIT",
     "dependencies": {
-      "electron": "^13.1.6",
-      "fs-extra": "^10.0.0"
+        "fs-extra": "^10.0.0"
     },
     "devDependencies": {
-      "electron-builder": "^22.13.0"
+        "electron": "^13.1.6",
+        "electron-builder": "^22.14.13",
+        "outras-depencias": "./node_modules/**/*"
     }
-  }
-  
+}
