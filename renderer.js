@@ -2,6 +2,7 @@ const { instalarArquivo } = require('./install');
 const { desinstalarArquivo } = require('./uninstall');
 const path = require('path');
 
+
 // Seletor dos botões "Instalar" e "Desinstalar" usando os IDs que você adicionou
 const botaoLottus = document.getElementById('lottus');
 const botaoULottus = document.getElementById('ulottus');
@@ -70,3 +71,5 @@ botaoFpsPlus.addEventListener('click', () => {
 botaoUFpsPlus.addEventListener('click', () => {
   desinstalarArquivo();
 });
+
+
