@@ -6,11 +6,11 @@ let mainWindow;
 function createWindow() {
   // Cria uma janela do Electron
   mainWindow = new BrowserWindow({
-    width: 800,
+    width: 900,
     height: 600,
-    minWidth: 800,
+    minWidth: 900,
     minHeight: 600,
-    maxWidth: 800,
+    maxWidth: 900,
     maxHeight: 600,
     autoHideMenuBar: true,
     webPreferences: {

@@ -6,20 +6,83 @@
   <title>Instalador Automatico - Dzordi</title>
   <link rel="stylesheet" href="styles.css">
   </head>
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Interface</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
   <body>
-  <div class="img">
-    <img src="./assets/exemplo.png" alt="">
-  </div>
-  <div class="corpo">
-    <h1>Citizen Lottus v2</h1>
-  </div>
-  <div class="button">
-    <button id="botao-instalar">Instalar</button>
-    <button id="botao-uninstall">Desinstalar</button>
-  </div>
-  <script src="./renderer.js"></script>
+    <div class="container">
+      <aside class="sidebar">
+        <ul>
+          <li><a href="#citizens">Citizens</a></li>
+          <li><a href="#">Skins</a></li>
+          <li><a href="#">Mods</a></li>
+        </ul>
+      </aside>
+      <section id="citizens">
+        <!-- Conteúdo principal da página -->
+        <div class="block">
+          <img src="./assets/exemplo.png" alt="Imagem 1">
+          <p>Descrição da imagem 1</p>
+          <div class="buttons">
+            <button id="lottus">Instalar</button>
+            <button id="ulottus">Desinstalar</button>
+          </div>
+        </div>
+        <div class="block">
+          <img src="./assets/exemplo.png" alt="Imagem 2">
+          <p>Descrição da imagem 2</p>
+          <div class="buttons">
+            <button id="prime">Instalar</button>
+            <button id="uprime">Desinstalar</button>
+          </div>
+        </div>
+        <div class="block">
+          <img src="./assets/exemplo.png" alt="Imagem 3">
+          <p>Descrição da imagem 3</p>
+          <div class="buttons">
+            <button id="ghost">Instalar</button>
+            <button id="ughost">Desinstalar</button>
+          </div>
+        </div>
+        <div class="block">
+          <img src="./assets/exemplo.png" alt="Imagem 3">
+          <p>Descrição da imagem 3</p>
+          <div class="buttons">
+            <button id="styles">Instalar</button>
+            <button id="ustyles">Desinstalar</button>
+          </div>
+        </div>
+        <div class="block">
+          <img src="./assets/exemplo.png" alt="Imagem 3">
+          <p>Descrição da imagem 3</p>
+          <div class="buttons">
+            <button id="hyper">Instalar</button>
+            <button id="uhyper">Desinstalar</button>
+          </div>
+        </div>
+        <div class="block">
+          <img src="./assets/exemplo.png" alt="Imagem 3">
+          <p>Descrição da imagem 3</p>
+          <div class="buttons">
+            <button id="fpsplus">Instalar</button>
+            <button id="ufpsplus">Desinstalar</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="renderer.js"></script>
   </body>
-</html> 
+  
+  </html>
+  
 
 
 <!-- npm run package-win -->

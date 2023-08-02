@@ -1,17 +1,17 @@
 {
-    "appId": "com.dzordi.app", 
-    "productName": "Dzordi Panel", 
-    "directories": {
-      "output": "dist" 
-    },
-    "win": {
-      "target": "NSIS"
-    },
-    "mac": {
-      "target": "dmg" 
-    },
-    "linux": {
-      "target": "AppImage" 
-    }
+  "appId": "com.dzordi.myapp",
+  "productName": "Dzordi Panel",
+  "directories": {
+    "output": "dist"
+  },
+  "win": {
+    "target": "NSIS",
+    "icon": "./icon.ico" 
+  },
+  "mac": {
+    "target": "dmg"
+  },
+  "linux": {
+    "target": "AppImage"
   }
-  
+}
