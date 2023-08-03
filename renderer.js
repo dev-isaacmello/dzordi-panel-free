@@ -1,143 +1,78 @@
-const { instalarArquivo } = require('./install');
-const { desinstalarArquivo } = require('./uninstall');
+const { instalarArquivo, instalarGraphicsPrime, instalarHyper, instalarStyles, instalarFpsPlus } = require('./install');
 const path = require('path');
 const { ipcRenderer } = require('electron');
+const { desinstalarArquivo } = require('./uninstall');
+
 
 // Seletor dos botões "Instalar" e "Desinstalar" usando os IDs que você adicionou
-const botaoLottus = document.getElementById('lottus');
-const botaoULottus = document.getElementById('ulottus');
-const botaoPrime = document.getElementById('prime');
-const botaoUPrime = document.getElementById('uprime');
-const botaoGhost = document.getElementById('ghost');
-const botaoUGhost = document.getElementById('ughost');
-const botaoStyles = document.getElementById('styles');
-const botaoUStyles = document.getElementById('ustyles');
-const botaoHyper = document.getElementById('hyper');
-const botaoUHyper = document.getElementById('uhyper');
-const botaoFpsPlus = document.getElementById('fpsplus');
-const botaoUFpsPlus = document.getElementById('ufpsplus');
 
-// Adicionando os eventos de clique para cada botão
-botaoLottus.addEventListener('click', () => {
+function toggleButtonColor(buttonElement) {
+  buttonElement.classList.toggle('clicked');
+}
+
+// Função para alterar o texto do botão e ação associada
+function toggleButtonTextAndAction(buttonElement, actionFunction) {
+  const isInstalled = buttonElement.classList.contains('clicked');
+  if (isInstalled) {
+    desinstalarArquivo();
+    buttonElement.textContent = 'Instalar';
+  } else {
+    actionFunction();
+    buttonElement.textContent = 'Desinstalar';
+  }
+}
+
+// Função para instalar o Prime
+function toggleLottus() {
+  const botaoLottus = document.getElementById('lottus');
   const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
-  const isInstalled = botaoLottus.textContent === 'Instalado';
+  toggleButtonTextAndAction(botaoLottus, () => instalarArquivo(destino));
+  toggleButtonColor(botaoLottus);
+}
 
-  if (isInstalled) {
-    desinstalarArquivo();
-    botaoLottus.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
-  } else {
-    instalarArquivo(destino);
-    botaoLottus.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
-  }
-});
+function togglePrime() {
+  const botaoPrime = document.getElementById('prime');
+  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'PRIMEV2.rpf');
+  toggleButtonTextAndAction(botaoPrime, () => instalarGraphicsPrime(destino));
+  toggleButtonColor(botaoPrime);
+}
 
-botaoULottus.addEventListener('click', () => {
-  desinstalarArquivo();
-  botaoLottus.textContent = 'Instalar';
-});
+// Função para instalar o Styles
+function toggleStyles() {
+  const botaoStyles = document.getElementById('styles');
+  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'STYLES.rpf');
+  toggleButtonTextAndAction(botaoStyles, () => instalarStyles(destino));
+  toggleButtonColor(botaoStyles);
+}
 
-botaoPrime.addEventListener('click', () => {
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Prime by Dzordi.rpf');
-  const isInstalled = botaoPrime.textContent === 'Instalado';
+// Função para instalar o Hyper
+function toggleHyper() {
+  const botaoHyper = document.getElementById('hyper');
+  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'hyper.rpf');
+  toggleButtonTextAndAction(botaoHyper, () => instalarHyper(destino));
+  toggleButtonColor(botaoHyper);
+}
 
-  if (isInstalled) {
-    desinstalarArquivo();
-    botaoPrime.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
-  } else {
-    instalarArquivo(destino);
-    botaoPrime.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
-  }
-});
+// Função para instalar o FPS Plus
+function toggleFpsPlus() {
+  const botaoFpsPlus = document.getElementById('fpsplus');
+  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'fpsplus.rpf');
+  toggleButtonTextAndAction(botaoFpsPlus, () => instalarFpsPlus(destino));
+  toggleButtonColor(botaoFpsPlus);
+}
 
-botaoUPrime.addEventListener('click', () => {
-  desinstalarArquivo();
-  botaoPrime.textContent = 'Instalar';
-});
-
-botaoGhost.addEventListener('click', () => {
+// Adicionar os eventos de clique para cada botão
+document.getElementById('lottus').addEventListener('click', () => {
   const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
-  const isInstalled = botaoGhost.textContent === 'Instalado';
-
-  if (isInstalled) {
-    desinstalarArquivo();
-    botaoGhost.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
-  } else {
-    instalarArquivo(destino);
-    botaoGhost.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
-  }
+  toggleButtonTextAndAction(botaoLottus, () => instalarArquivo(destino));
+  toggleButtonColor(botaoLottus);
 });
 
-botaoUGhost.addEventListener('click', () => {
-  desinstalarArquivo();
-  botaoGhost.textContent = 'Instalar';
-});
-
-botaoStyles.addEventListener('click', () => {
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
-  const isInstalled = botaoStyles.textContent === 'Instalado';
-
-  if (isInstalled) {
-    desinstalarArquivo();
-    botaoStyles.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
-  } else {
-    instalarArquivo(destino);
-    botaoStyles.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
-  }
-});
-
-botaoUStyles.addEventListener('click', () => {
-  desinstalarArquivo();
-  botaoStyles.textContent = 'Instalar';
-});
-
-botaoHyper.addEventListener('click', () => {
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
-  const isInstalled = botaoHyper.textContent === 'Instalador';
-
-  if (isInstalled) {
-    desinstalarArquivo();
-    botaoHyper.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
-  } else {
-    instalarArquivo(destino);
-    botaoHyper.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
-  }
-});
-
-botaoUHyper.addEventListener('click', () => {
-  desinstalarArquivo();
-  botaoHyper.textContent = 'Instalar';
-});
-
-botaoFpsPlus.addEventListener('click', () => {
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
-  const isInstalled = botaoFpsPlus.textContent === 'Instalado';
-
-  if (isInstalled) {
-    desinstalarArquivo();
-    botaoFpsPlus.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
-  } else {
-    instalarArquivo(destino);
-    botaoFpsPlus.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
-  }
-});
-
-botaoUFpsPlus.addEventListener('click', () => {
-  desinstalarArquivo();
-  botaoFpsPlus.textContent = 'Instalar';
-});
-
+document.getElementById('lottus').addEventListener('click', toggleLottus);
+document.getElementById('prime').addEventListener('click', togglePrime);
+document.getElementById('styles').addEventListener('click', toggleStyles);
+document.getElementById('hyper').addEventListener('click', toggleHyper);
+document.getElementById('fpsplus').addEventListener('click', toggleFpsPlus);
 
 
 

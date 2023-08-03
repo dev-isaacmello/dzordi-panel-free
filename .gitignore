@@ -1,1 +1,7 @@
-node_modules
+# packages
+/node_modules
+
+# build files and directories
+/dist
+
+app.asar
