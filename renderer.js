@@ -1,8 +1,7 @@
 const { instalarArquivo, instalarGraphicsPrime, instalarHyper, instalarStyles, instalarFpsPlus } = require('./install');
+const { instalarArquivo, instalarGraphicsPrime, instalarHyper, instalarStyles, instalarFpsPlus } = require('./install');
 const path = require('path');
 const { ipcRenderer } = require('electron');
-const { desinstalarArquivo } = require('./uninstall');
-
 
 // Seletor dos botões "Instalar" e "Desinstalar" usando os IDs que você adicionou
 
