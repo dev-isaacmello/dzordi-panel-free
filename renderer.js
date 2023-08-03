@@ -1,7 +1,8 @@
-const { instalarArquivo } = require('./install');
-const { desinstalarArquivo } = require('./uninstall');
+const { instalarArquivo, instalarGraphicsPrime, instalarHyper, instalarStyles, instalarFpsPlus } = require('./install');
 const path = require('path');
 const { ipcRenderer } = require('electron');
+const { desinstalarArquivo } = require('./uninstall');
+
 
 // Seletor dos botões "Instalar" e "Desinstalar" usando os IDs que você adicionou
 const botaoLottus = document.getElementById('lottus');
@@ -25,31 +26,26 @@ botaoLottus.addEventListener('click', () => {
   if (isInstalled) {
     desinstalarArquivo();
     botaoLottus.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
   } else {
     instalarArquivo(destino);
     botaoLottus.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
   }
 });
 
 botaoULottus.addEventListener('click', () => {
   desinstalarArquivo();
-  botaoLottus.textContent = 'Instalar';
 });
 
 botaoPrime.addEventListener('click', () => {
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Prime by Dzordi.rpf');
+  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'PRIMEV2.rpf');
   const isInstalled = botaoPrime.textContent === 'Instalado';
 
   if (isInstalled) {
     desinstalarArquivo();
     botaoPrime.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
   } else {
-    instalarArquivo(destino);
+    instalarGraphicsPrime(destino);
     botaoPrime.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
   }
 });
 
@@ -58,38 +54,16 @@ botaoUPrime.addEventListener('click', () => {
   botaoPrime.textContent = 'Instalar';
 });
 
-botaoGhost.addEventListener('click', () => {
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
-  const isInstalled = botaoGhost.textContent === 'Instalado';
-
-  if (isInstalled) {
-    desinstalarArquivo();
-    botaoGhost.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
-  } else {
-    instalarArquivo(destino);
-    botaoGhost.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
-  }
-});
-
-botaoUGhost.addEventListener('click', () => {
-  desinstalarArquivo();
-  botaoGhost.textContent = 'Instalar';
-});
-
 botaoStyles.addEventListener('click', () => {
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
+  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'STYLES.rpf');
   const isInstalled = botaoStyles.textContent === 'Instalado';
 
   if (isInstalled) {
     desinstalarArquivo();
     botaoStyles.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
   } else {
-    instalarArquivo(destino);
+    instalarStyles(destino);
     botaoStyles.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
   }
 });
 
@@ -99,17 +73,15 @@ botaoUStyles.addEventListener('click', () => {
 });
 
 botaoHyper.addEventListener('click', () => {
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
+  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'hyper.rpf');
   const isInstalled = botaoHyper.textContent === 'Instalador';
 
   if (isInstalled) {
     desinstalarArquivo();
     botaoHyper.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
   } else {
-    instalarArquivo(destino);
+    instalarHyper(destino);
     botaoHyper.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
   }
 });
 
@@ -119,17 +91,15 @@ botaoUHyper.addEventListener('click', () => {
 });
 
 botaoFpsPlus.addEventListener('click', () => {
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
+  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'fpsplus.rpf');
   const isInstalled = botaoFpsPlus.textContent === 'Instalado';
 
   if (isInstalled) {
     desinstalarArquivo();
     botaoFpsPlus.textContent = 'Instalar';
-    botaoLottus.classList.remove('instalado');
   } else {
-    instalarArquivo(destino);
+    instalarFpsPlus(destino);
     botaoFpsPlus.textContent = 'Instalado';
-    botaoLottus.classList.add('instalado');
   }
 });
 
@@ -137,7 +107,6 @@ botaoUFpsPlus.addEventListener('click', () => {
   desinstalarArquivo();
   botaoFpsPlus.textContent = 'Instalar';
 });
-
 
 
 
