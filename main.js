@@ -7,11 +7,12 @@ function createWindow() {
   // Cria uma janela do Electron
   mainWindow = new BrowserWindow({
     width: 900,
-    height: 600,
-    minWidth: 900,
+    height: 620,
+    minWidth: 400,
     minHeight: 600,
-    maxWidth: 900,
-    maxHeight: 600,
+    maxWidth: 1200,
+    maxHeight: 700,
+    frame: false, 
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
@@ -47,4 +48,22 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+const { ipcMain } = require('electron');
+
+ipcMain.on('minimize', () => {
+  mainWindow.minimize();
+});
+
+ipcMain.on('maximize', () => {
+  if (mainWindow.isMaximized()) {
+    mainWindow.restore();
+  } else {
+    mainWindow.maximize();
+  }
+});
+
+ipcMain.on('close', () => {
+  app.quit();
 });
