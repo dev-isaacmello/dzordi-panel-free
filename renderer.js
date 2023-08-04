@@ -72,9 +72,16 @@ document.getElementById('lottus').addEventListener('click', toggleLottus);
 document.getElementById('prime').addEventListener('click', togglePrime);
 document.getElementById('styles').addEventListener('click', toggleStyles);
 document.getElementById('hyper').addEventListener('click', toggleHyper);
-document.getElementById('fpsplus').addEventListener('click', toggleFpsPlus);
+// document.getElementById('fpsplus').addEventListener('click', toggleFpsPlus);
 
 
+function openDiscord() {
+  // Substitua o link abaixo pelo link de convite do servidor do Discord que você deseja redirecionar
+  const discordInviteLink = "https://discord.gg/dzordi";
+
+  // Abre o link do Discord em uma nova aba
+  window.open(discordInviteLink, "_blank");
+}
 
 document.getElementById('minimize-btn').addEventListener('click', () => {
   ipcRenderer.send('minimize');

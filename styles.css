@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&family=Poppins:wght@500&display=swap');
 
 body {
-  background: url(./assets/background.png);
-  background-size: cover;
+  background: rgb(138,138,138);
+  background: linear-gradient(90deg, rgba(138,138,138,1) 0%, rgba(5,19,83,1) 100%);
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
@@ -21,10 +21,21 @@ body {
 
 /* Estilo do título do cabeçalho */
 .title {
+  display: flex;
+  justify-content: center;
   padding-top: 10px;
   padding-left: 20px;
   flex: 1; /* Expande para ocupar o espaço restante no cabeçalho */
 }
+
+.beta {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 2px;
+  margin-left: 42px;
+  border-radius: 2%;
+  font-size: 80%; /* Valor menor que 100% para reduzir o tamanho do texto */
+}
+
 
 /* Estilo dos botões de controle */
 .controls {
@@ -50,7 +61,6 @@ button:hover {
 
 
 
-
 .container {
   margin: 0 auto;
   overflow: hidden;
@@ -62,25 +72,30 @@ button:hover {
 }
 
 .block {
+  text-align: center;
+  align-items: center;
   width: 180px;
   height: 220px;
-  padding: 15px;
-  border-radius: 4%;
-  background-color: rgba(255, 255, 255, 0.151);
-  text-align: center;
+  padding: 40px;
+  border-radius: 2%;
   margin: 10px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: rgba(255, 255, 255, 0.13);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: transform 0.3s ease; /* Adiciona uma transição suave para a transformação */
 }
 
 .block img {
-  width: 160px;
-  height: 140px;
+  width: 180px;
   object-fit: cover;
-  margin-bottom: 10px;
 }
+
+.block:hover {
+  transform: scale(1.1); /* Aumenta a escala do bloco em 1.1x ao passar o mouse */
+  z-index: 1;
+}
+
 
 .block p {
   font-size: 16px;
@@ -105,8 +120,8 @@ button:hover {
   width: 80px;
   height: 30px;
   border: none;
-  background-color: #9e9e9e;
-  color: #ffffff;
+  background-color: #eeeeee;
+  color: #000000;
   font-size: 14px;
   cursor: pointer;
   border-radius: 4px;
@@ -114,11 +129,13 @@ button:hover {
 }
 
 
-/* .buttons button:hover {
-  background-color: #ebecee;
-  color: black; */
+.buttons button:hover {
+  background-color: #133577;
+  color: rgb(250, 246, 246); 
+}
 
 
+/* Parte que iremos tratar a seção de otimizações */
 
 
 ::-webkit-scrollbar {

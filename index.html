@@ -7,59 +7,106 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <section class="citizens">
   <div class="header">
-    <div class="title">Dzordi Panel BETA</div>
+    <div class="beta">BETA</div>
+    <div class="title">Dzordi Panel</div>
     <div class="controls">
       <button id="minimize-btn">&#x2500;</button>
       <button id="maximize-btn">&#x2750;</button>
       <button id="close-btn">&#x2715;</button>
     </div>
   </div>
-  <div class="container">
-    <!-- Conteúdo principal da página -->
-    <div class="block">
-      <img src="./assets/lottus1.jpg" alt="Imagem 1">
-      <p>Citizen Lottus V2</p>
-      <div class="buttons">
-        <button id="lottus" class="install-button">Instalar</button>
+    <div class="container">
+      <!-- Conteúdo principal da página -->
+      <div class="block">
+        <img src="./assets/background.png" alt="Imagem 1">
+        <p>Mod Gratis 1</p>
+        <div class="buttons">
+          <button id="lottus" class="install-button">Instalar</button>
+        </div>
+      </div>
+      <div class="block">
+        <img id="img1" src="./assets/background.png" alt="Imagem 1">
+        <p>Mod Gratis 2</p>
+        <div class="buttons">
+          <button id="prime" class="install-button">Instalar</button>
+        </div>
+      </div>
+      <div class="block">
+        <img id="img1" src="./assets/background.png" alt="Imagem 1">
+        <p>Mod Gratis 3</p>
+        <div class="buttons">
+          <button id="ghost" class="install-button">Em breve..</button>
+        </div>
+      </div>
+      <div class="block">
+        <img id="img1" src="./assets/background.png" alt="Imagem 1">
+        <p>Mod Gratis 4</p>
+        <div class="buttons">
+          <button id="styles" class="install-button">Instalar</button>
+        </div>
+      </div>
+      <div class="block">
+        <img id="img1" src="./assets/background.png" alt="Imagem 1">
+        <p>Mod Gratis 5</p>
+        <div class="buttons">
+          <button id="hyper" class="install-button">Instalar</button>
+        </div>
       </div>
     </div>
-    <div class="block">
-      <img id="img1" src="./assets/prime1.jpg" alt="Imagem 1">
-      <p>Citizen Prime v2</p>
-      <div class="buttons">
-        <button id="prime" class="install-button">Instalar</button>
+  </section>
+  <section class="otimizacoes">
+    <div class="header">
+      <div class="title">Citizens Exclusivas</div>
       </div>
     </div>
-    <div class="block">
-      <img id="img1" src="./assets/ghost2.jpg" alt="Imagem 1">
-      <p>Citizen Ghost V2</p>
-      <div class="buttons">
-        <button id="ghost" class="install-button">Em breve..</button>
+      <div class="container">
+        <!-- Conteúdo principal da página -->
+        <div class="block">
+          <img src="./assets/lottus1.jpg" alt="Imagem 1">
+          <p>Citizen Lottus V2</p>
+          <div class="buttons">
+            <button onclick="openDiscord()">R$ 29,90</button>
+          </div>
+        </div>
+        <div class="block">
+          <img id="img1" src="./assets/prime1.jpg" alt="Imagem 1">
+          <p>Citizen Prime v2</p>
+          <div class="buttons">
+            <button onclick="openDiscord()">R$ 29,90</button>
+          </div>
+        </div>
+        <div class="block">
+          <img id="img1" src="./assets/ghost2.jpg" alt="Imagem 1">
+          <p>Citizen Ghost V2</p>
+          <div class="buttons">
+            <button onclick="openDiscord()">R$ 29,90</button>
+          </div>
+        </div>
+        <div class="block">
+          <img id="img1" src="./assets/styles1.jpg" alt="Imagem 1">
+          <p>Citizen Styles V2</p>
+          <div class="buttons">
+            <button onclick="openDiscord()">R$ 29,90</button>
+          </div>
+        </div>
+        <div class="block">
+          <img id="img1" src="./assets/hyper4.jpg" alt="Imagem 1">
+          <p>Citizen Hyper V2</p>
+          <div class="buttons">
+            <button onclick="openDiscord()">R$ 59,90</button>
+          </div>
+        </div>
+        <div class="block">
+          <img id="img1" src="./assets/fpsplus2.jpg" alt="Imagem 1">
+          <p>Citizen FPS PLUS</p>
+          <div class="buttons">
+            <button onclick="openDiscord()">R$ 14,90</button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="block">
-      <img id="img1" src="./assets/styles1.jpg" alt="Imagem 1">
-      <p>Citizen Styles V2</p>
-      <div class="buttons">
-        <button id="styles" class="install-button">Instalar</button>
-      </div>
-    </div>
-    <div class="block">
-      <img id="img1" src="./assets/hyper4.jpg" alt="Imagem 1">
-      <p>Citizen Hyper V2</p>
-      <div class="buttons">
-        <button id="hyper" class="install-button">Instalar</button>
-      </div>
-    </div>
-    <div class="block">
-      <img id="img1" src="./assets/fpsplus2.jpg" alt="Imagem 1">
-      <p>Citizen FPS PLUS</p>
-      <div class="buttons">
-        <button id="fpsplus" class="install-button">Instalar</button>
-      </div>
-    </div>
-  </div>
+    </section>
   </script>
   <script src="renderer.js"></script>
 </body>
