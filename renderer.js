@@ -1,7 +1,8 @@
 const { instalarArquivo, instalarGraphicsPrime, instalarHyper, instalarStyles, instalarFpsPlus } = require('./install');
 const path = require('path');
-const { ipcRenderer } = require('electron');
+const { ipcRenderer, shell} = require('electron');
 const { desinstalarArquivo } = require('./uninstall');
+
 
 
 // Seletor dos botões "Instalar" e "Desinstalar" usando os IDs que você adicionou
@@ -80,7 +81,7 @@ function openDiscord() {
   const discordInviteLink = "https://discord.gg/dzordi";
 
   // Abre o link do Discord em uma nova aba
-  window.open(discordInviteLink, "_blank");
+  shell.openExternal(discordInviteLink);
 }
 
 document.getElementById('minimize-btn').addEventListener('click', () => {
