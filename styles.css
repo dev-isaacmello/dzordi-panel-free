@@ -165,6 +165,10 @@ button:hover {
   color: rgb(32, 0, 211);
 }
 
+#buttonvip:hover {
+  color: rgb(229, 255, 0);
+}
+
 
 .footer-distributed {
   background-color: rgba(0, 0, 0, 0.15);
