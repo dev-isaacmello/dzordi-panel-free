@@ -4,19 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dzordi Panel BETA</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <section class="citizens">
+  <section id="citizens" class="citizens">
   <div class="header">
     <div class="beta">BETA</div>
-    <div class="title">Dzordi Panel</div>
+    <div class="title">Dzordi Panel v1.0.0</div>
     <div class="controls">
       <button id="minimize-btn">&#x2500;</button>
       <button id="maximize-btn">&#x2750;</button>
       <button id="close-btn">&#x2715;</button>
     </div>
   </div>
+  <div class="header3">Citizens FREE</div>
     <div class="container">
       <!-- Conteúdo principal da página -->
       <div class="block">
@@ -56,57 +58,111 @@
       </div>
     </div>
   </section>
-  <section class="otimizacoes">
-    <div class="header">
-      <div class="title">Citizens Exclusivas</div>
+  <section id="tweaks">
+    <div class="header3">
+      <div class="title4">Tweaks</div>
+    </div>
+    <div class="container">
+      <!-- Conteúdo principal da página -->
+      <div class="block">
+        <img src="./assets/background.png" alt="Imagem 1">
+        <p>Settings Baixas</p>
+        <div class="buttons">
+          <button>Em breve..</button>
+        </div>
+      </div>
+      <div class="block">
+        <img id="img1" src="./assets/background.png" alt="Imagem 1">
+        <p>Settings Medias</p>
+        <div class="buttons">
+          <button>Em breve..</button>
+        </div>
+      </div>
+      <div class="block">
+        <img id="img1" src="./assets/background.png" alt="Imagem 1">
+        <p>Settings Altas</p>
+        <div class="buttons">
+          <button>Em breve..</button>
+        </div>
+      </div>
+      <div class="block">
+        <img id="img1" src="./assets/background.png" alt="Imagem 1">
+        <p>Limpar Cache</p>
+        <div class="buttons">
+          <button>Em breve..</button>
+        </div>
+      </div>
+      <div class="block">
+        <img id="img1" src="./assets/background.png" alt="Imagem 1">
+        <p>Citizen Original</p>
+        <div class="buttons">
+          <button>Em breve..</button>
+        </div>
       </div>
     </div>
+  </section>
+  <section id="vip" class="vip">
+    <div class="header2">
+      <div class="title2">Citizens Exclusivas</div>
+      </div>
       <div class="container">
         <!-- Conteúdo principal da página -->
         <div class="block">
           <img src="./assets/lottus1.jpg" alt="Imagem 1">
           <p>Citizen Lottus V2</p>
           <div class="buttons">
-            <button onclick="openDiscord()">R$ 29,90</button>
+            <button id="buttonvip" onclick="openDiscord()"><i class='bx bxs-crown'></i></button>
           </div>
         </div>
         <div class="block">
           <img id="img1" src="./assets/prime1.jpg" alt="Imagem 1">
           <p>Citizen Prime v2</p>
           <div class="buttons">
-            <button onclick="openDiscord()">R$ 29,90</button>
+            <button id="buttonvip" onclick="openDiscord()"><i class='bx bxs-crown'></i></button>
           </div>
         </div>
         <div class="block">
           <img id="img1" src="./assets/ghost2.jpg" alt="Imagem 1">
           <p>Citizen Ghost V2</p>
           <div class="buttons">
-            <button onclick="openDiscord()">R$ 29,90</button>
+            <button id="buttonvip" onclick="openDiscord()"><i class='bx bxs-crown'></i></button>
           </div>
         </div>
         <div class="block">
           <img id="img1" src="./assets/styles1.jpg" alt="Imagem 1">
           <p>Citizen Styles V2</p>
           <div class="buttons">
-            <button onclick="openDiscord()">R$ 29,90</button>
+            <button id="buttonvip" onclick="openDiscord()"><i class='bx bxs-crown'></i></button>
           </div>
         </div>
         <div class="block">
           <img id="img1" src="./assets/hyper4.jpg" alt="Imagem 1">
           <p>Citizen Hyper V2</p>
           <div class="buttons">
-            <button onclick="openDiscord()">R$ 59,90</button>
+            <button id="buttonvip" onclick="openDiscord()"><i class='bx bxs-crown'></i></button>
           </div>
         </div>
         <div class="block">
           <img id="img1" src="./assets/fpsplus2.jpg" alt="Imagem 1">
           <p>Citizen FPS PLUS</p>
           <div class="buttons">
-            <button onclick="openDiscord()">R$ 14,90</button>
+            <button id="buttonvip" onclick="openDiscord()"><i class='bx bxs-crown'></i></button>
           </div>
         </div>
       </div>
     </section>
+
+		<footer class="footer-distributed">
+			<div class="footer-right">
+				<a href="https://discord.gg/dzordi" target="_blank"><i class='bx bxl-discord'></i></a>
+			</div>
+			<div class="footer-left">
+				<p class="footer-links">
+					<a href="https://discord.gg/dzordi" target="_blank">Seja Vip</a>
+				</p>
+				<p>Dzordi Community &copy; 2023</p>
+			</div>
+		</footer>
   </script>
   <script src="renderer.js"></script>
 </body>

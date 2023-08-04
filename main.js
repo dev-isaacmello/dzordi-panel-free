@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
 let mainWindow;
@@ -6,7 +6,7 @@ let mainWindow;
 function createWindow() {
   // Cria uma janela do Electron
   mainWindow = new BrowserWindow({
-    width: 1440,
+    width: 1120,
     height: 800,
     minWidth: 400,
     minHeight: 600,
@@ -50,7 +50,6 @@ app.on('activate', () => {
   }
 });
 
-const { ipcMain } = require('electron');
 
 ipcMain.on('minimize', () => {
   mainWindow.minimize();
@@ -67,3 +66,4 @@ ipcMain.on('maximize', () => {
 ipcMain.on('close', () => {
   app.quit();
 });
+

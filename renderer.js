@@ -6,74 +6,60 @@ const { desinstalarArquivo } = require('./uninstall');
 
 
 // Seletor dos botões "Instalar" e "Desinstalar" usando os IDs que você adicionou
-
+// Função para alterar a classe do botão para "clicked"
 function toggleButtonColor(buttonElement) {
   buttonElement.classList.toggle('clicked');
 }
 
-// Função para alterar o texto do botão e ação associada
-function toggleButtonTextAndAction(buttonElement, actionFunction) {
+// Função para alternar o texto do botão e executar ação associada
+function toggleButtonTextAndAction(buttonElement, actionFunction, installText, uninstallText) {
   const isInstalled = buttonElement.classList.contains('clicked');
   if (isInstalled) {
     desinstalarArquivo();
-    buttonElement.textContent = 'Instalar';
+    buttonElement.textContent = installText;
   } else {
     actionFunction();
-    buttonElement.textContent = 'Desinstalar';
+    buttonElement.textContent = uninstallText;
   }
 }
 
-// Função para instalar o Prime
-function toggleLottus() {
-  const botaoLottus = document.getElementById('lottus');
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
-  toggleButtonTextAndAction(botaoLottus, () => instalarArquivo(destino));
-  toggleButtonColor(botaoLottus);
+// Função para lidar com as ações de instalação/desinstalação dos mods
+function handleButtonClick(buttonId, installFunction, uninstallFunction, installText, uninstallText) {
+  const button = document.getElementById(buttonId);
+  const storageKey = `buttonState_${buttonId}`;
+
+  button.addEventListener('click', () => {
+    toggleButtonTextAndAction(button, installFunction, installText, uninstallText);
+    toggleButtonColor(button);
+    saveButtonState(storageKey, button.classList.contains('clicked'));
+  });
+
+  // Restaurar o estado do botão
+  const isButtonClicked = getButtonState(storageKey);
+  if (isButtonClicked) {
+    toggleButtonColor(button);
+    button.textContent = uninstallText;
+  }
 }
 
-function togglePrime() {
-  const botaoPrime = document.getElementById('prime');
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'PRIMEV2.rpf');
-  toggleButtonTextAndAction(botaoPrime, () => instalarGraphicsPrime(destino));
-  toggleButtonColor(botaoPrime);
+// Função para salvar o estado do botão no localStorage
+function saveButtonState(storageKey, state) {
+  localStorage.setItem(storageKey, JSON.stringify(state));
 }
 
-// Função para instalar o Styles
-function toggleStyles() {
-  const botaoStyles = document.getElementById('styles');
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'STYLES.rpf');
-  toggleButtonTextAndAction(botaoStyles, () => instalarStyles(destino));
-  toggleButtonColor(botaoStyles);
+// Função para obter o estado do botão do localStorage
+function getButtonState(storageKey) {
+  const state = localStorage.getItem(storageKey);
+  return state ? JSON.parse(state) : false;
 }
 
-// Função para instalar o Hyper
-function toggleHyper() {
-  const botaoHyper = document.getElementById('hyper');
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'hyper.rpf');
-  toggleButtonTextAndAction(botaoHyper, () => instalarHyper(destino));
-  toggleButtonColor(botaoHyper);
-}
+// Chamando a função para cada botão de instalação
+handleButtonClick('lottus', instalarArquivo, desinstalarArquivo, 'Instalar', 'Desinstalar');
+handleButtonClick('prime', instalarGraphicsPrime, desinstalarArquivo, 'Instalar', 'Desinstalar');
+handleButtonClick('styles', instalarStyles, desinstalarArquivo, 'Instalar', 'Desinstalar');
+handleButtonClick('hyper', instalarHyper, desinstalarArquivo, 'Instalar', 'Desinstalar');
+// handleButtonClick('fpsplus', instalarFpsPlus, desinstalarArquivo, 'Instalar', 'Desinstalar');
 
-// Função para instalar o FPS Plus
-function toggleFpsPlus() {
-  const botaoFpsPlus = document.getElementById('fpsplus');
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'fpsplus.rpf');
-  toggleButtonTextAndAction(botaoFpsPlus, () => instalarFpsPlus(destino));
-  toggleButtonColor(botaoFpsPlus);
-}
-
-// Adicionar os eventos de clique para cada botão
-document.getElementById('lottus').addEventListener('click', () => {
-  const destino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
-  toggleButtonTextAndAction(botaoLottus, () => instalarArquivo(destino));
-  toggleButtonColor(botaoLottus);
-});
-
-document.getElementById('lottus').addEventListener('click', toggleLottus);
-document.getElementById('prime').addEventListener('click', togglePrime);
-document.getElementById('styles').addEventListener('click', toggleStyles);
-document.getElementById('hyper').addEventListener('click', toggleHyper);
-// document.getElementById('fpsplus').addEventListener('click', toggleFpsPlus);
 
 
 function openDiscord() {
