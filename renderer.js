@@ -1,4 +1,4 @@
-const { instalarArquivo, instalarGraphicsPrime, instalarHyper, instalarStyles, instalarFpsPlus } = require('./install');
+const { instalarArquivo, instalarFreemode2, instalarFreemode3, instalarFreemode4, instalarFreemode5 } = require('./install');
 const path = require('path');
 const { ipcRenderer, shell} = require('electron');
 const { desinstalarArquivo } = require('./uninstall');
@@ -54,11 +54,11 @@ function getButtonState(storageKey) {
 }
 
 // Chamando a função para cada botão de instalação
-handleButtonClick('lottus', instalarArquivo, desinstalarArquivo, 'Instalar', 'Desinstalar');
-handleButtonClick('prime', instalarGraphicsPrime, desinstalarArquivo, 'Instalar', 'Desinstalar');
-handleButtonClick('styles', instalarStyles, desinstalarArquivo, 'Instalar', 'Desinstalar');
-handleButtonClick('hyper', instalarHyper, desinstalarArquivo, 'Instalar', 'Desinstalar');
-// handleButtonClick('fpsplus', instalarFpsPlus, desinstalarArquivo, 'Instalar', 'Desinstalar');
+handleButtonClick('freemode1', instalarArquivo, desinstalarArquivo, 'Instalar', 'Desinstalar');
+handleButtonClick('freemode2', instalarFreemode2, desinstalarArquivo, 'Instalar', 'Desinstalar');
+handleButtonClick('freemode3', instalarFreemode3, desinstalarArquivo, 'Instalar', 'Desinstalar');
+handleButtonClick('freemode4', instalarFreemode4, desinstalarArquivo, 'Instalar', 'Desinstalar');
+handleButtonClick('freemode5', instalarFreemode5, desinstalarArquivo, 'Instalar', 'Desinstalar');
 
 
 

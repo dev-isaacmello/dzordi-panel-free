@@ -19,8 +19,8 @@ function instalarArquivo(destino) {
   }
 
   // Agora podemos copiar o arquivo para o destino
-  const arquivoOrigem = path.join(__dirname, 'mods', 'Graphics Lottus by Dzordi.rpf');
-  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'Graphics Lottus by Dzordi.rpf');
+  const arquivoOrigem = path.join(__dirname, 'mods', 'freemode1.rpf');
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'freemode1.rpf');
 
   fs.copyFile(arquivoOrigem, arquivoDestino, (err) => {
     if (err) {
@@ -31,7 +31,7 @@ function instalarArquivo(destino) {
   });
 }
 
-function instalarGraphicsPrime(destino) {
+function instalarFreemode2(destino) {
   const pastaDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'citizen');
 
   // Verifica se a pasta "citizen" existe antes de prosseguir
@@ -47,8 +47,8 @@ function instalarGraphicsPrime(destino) {
   }
 
   // Agora podemos copiar o arquivo para o destino
-  const arquivoOrigem = path.join(__dirname, 'mods', 'PRIMEV2.rpf');
-  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'PRIMEV2.rpf');
+  const arquivoOrigem = path.join(__dirname, 'mods', 'freemode2.rpf');
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'freemode2.rpf');
 
   fs.copyFile(arquivoOrigem, arquivoDestino, (err) => {
     if (err) {
@@ -61,7 +61,7 @@ function instalarGraphicsPrime(destino) {
 
 
 
-function instalarFpsPlus(destino) {
+function instalarFreemode3(destino) {
   const pastaDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'citizen');
 
   // Verifica se a pasta "citizen" existe antes de prosseguir
@@ -77,8 +77,8 @@ function instalarFpsPlus(destino) {
   }
 
   // Agora podemos copiar o arquivo para o destino
-  const arquivoOrigem = path.join(__dirname, 'mods', 'fpsplus.rpf');
-  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'fpsplus.rpf');
+  const arquivoOrigem = path.join(__dirname, 'mods', 'freemode3.rpf');
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'freemode3.rpf');
 
   fs.copyFile(arquivoOrigem, arquivoDestino, (err) => {
     if (err) {
@@ -89,7 +89,7 @@ function instalarFpsPlus(destino) {
   });
 }
 
-function instalarStyles(destino) {
+function instalarFreemode4(destino) {
   const pastaDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'citizen');
 
   // Verifica se a pasta "citizen" existe antes de prosseguir
@@ -105,8 +105,8 @@ function instalarStyles(destino) {
   }
 
   // Agora podemos copiar o arquivo para o destino
-  const arquivoOrigem = path.join(__dirname, 'mods', 'STYLES.rpf');
-  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'STYLES.rpf');
+  const arquivoOrigem = path.join(__dirname, 'mods', 'freemode4.rpf');
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'freemode4.rpf');
 
   fs.copyFile(arquivoOrigem, arquivoDestino, (err) => {
     if (err) {
@@ -117,7 +117,7 @@ function instalarStyles(destino) {
   });
 }
 
-function instalarHyper(destino) {
+function instalarFreemode5(destino) {
   const pastaDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'citizen');
 
   // Verifica se a pasta "citizen" existe antes de prosseguir
@@ -133,8 +133,8 @@ function instalarHyper(destino) {
   }
 
   // Agora podemos copiar o arquivo para o destino
-  const arquivoOrigem = path.join(__dirname, 'mods', 'hyper.rpf');
-  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'hyper.rpf');
+  const arquivoOrigem = path.join(__dirname, 'mods', 'freemode5.rpf');
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'freemode5.rpf');
 
   fs.copyFile(arquivoOrigem, arquivoDestino, (err) => {
     if (err) {
@@ -149,8 +149,8 @@ function instalarHyper(destino) {
 
 module.exports = {
   instalarArquivo,
-  instalarStyles,
-  instalarHyper,
-  instalarGraphicsPrime,
-  instalarFpsPlus,
+  instalarFreemode2,
+  instalarFreemode3,
+  instalarFreemode4,
+  instalarFreemode5,
 };

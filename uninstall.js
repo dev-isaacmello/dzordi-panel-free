@@ -20,42 +20,42 @@ function desinstalarArquivo() {
   }
 
   // Remove o arquivo "Graphics Lottus by Dzordi.rpf" instalado durante a instalação
-  const arquivoLottus = path.join(modsFolder, 'Graphics Lottus by Dzordi.rpf');
+  const arquivoFreemode1 = path.join(modsFolder, 'freemode1.rpf');
 
-  if (fs.existsSync(arquivoLottus)) {
+  if (fs.existsSync(arquivoFreemode1)) {
     try {
-      fs.unlinkSync(arquivoLottus);
+      fs.unlinkSync(arquivoFreemode1);
       console.log('Arquivo "Graphics Lottus" desinstalado com sucesso!');
     } catch (err) {
-      console.error('Erro ao desinstalar o arquivo "Graphics Lottus":', err);
+      console.error('Erro ao desinstalar o arquivo "freemode1":', err);
     }
   } else {
     console.log('Arquivo "Graphics Lottus" não encontrado. Nenhuma ação necessária.');
   }
 
   // Remove o arquivo "Graphics Prime by Dzordi.rpf" instalado durante a instalação
-  const arquivoPrime = path.join(modsFolder, 'PRIMEV2.rpf');
+  const arquivoFreemode2 = path.join(modsFolder, 'freemode2.rpf');
 
-  if (fs.existsSync(arquivoPrime)) {
+  if (fs.existsSync(arquivoFreemode2)) {
     try {
-      fs.unlinkSync(arquivoPrime);
+      fs.unlinkSync(arquivoFreemode2);
       console.log('desinstalado com sucesso!');
     } catch (err) {
-      console.error('Erro ao desinstalar o arquivo "Graphics Prime":', err);
+      console.error('Erro ao desinstalar o arquivo "freemode2":', err);
     }
   } else {
     console.log('Arquivo não encontrado. Nenhuma ação necessária.');
   }
 
   // Remove o arquivo "fpsplus.rpf" instalado durante a instalação
-  const arquivoFpsPlus = path.join(modsFolder, 'fpsplus.rpf');
+  const arquivoFreemode3 = path.join(modsFolder, 'freemode3.rpf');
 
-  if (fs.existsSync(arquivoFpsPlus)) {
+  if (fs.existsSync(arquivoFreemode3)) {
     try {
-      fs.unlinkSync(arquivoFpsPlus);
+      fs.unlinkSync(arquivoFreemode3);
       console.log('Arquivo desinstalado com sucesso!');
     } catch (err) {
-      console.error('Erro ao desinstalar o arquivo "fpsplus.rpf":', err);
+      console.error('Erro ao desinstalar o arquivo "freemode3.rpf":', err);
     }
   } else {
     console.log('Arquivo não encontrado. Nenhuma ação necessária.');
@@ -63,28 +63,28 @@ function desinstalarArquivo() {
 
 
     // Remove o arquivo "Syles.rpf" instalado durante a instalação
-  const arquivoStyles = path.join(modsFolder, 'STYLES.rpf');
+  const arquivoFreemode4 = path.join(modsFolder, 'freemode4.rpf');
 
-  if (fs.existsSync(arquivoStyles)) {
+  if (fs.existsSync(arquivoFreemode4)) {
     try {
-      fs.unlinkSync(arquivoStyles);
+      fs.unlinkSync(arquivoFreemode4);
       console.log('Arquivo desinstalado com sucesso!');
     } catch (err) {
-      console.error('Erro ao desinstalar o arquivo:', err);
+      console.error('Erro ao desinstalar o arquivo: "freemode4.rpf":', err);
     }
   } else {
     console.log('Arquivo não encontrado. Nenhuma ação necessária.');
   }
 
   // Remove o arquivo "hyper.rpf" instalado durante a instalação
-  const arquivoHyper = path.join(modsFolder, 'hyper.rpf');
+  const arquivoFreemode5 = path.join(modsFolder, 'freemode5.rpf');
 
-  if (fs.existsSync(arquivoHyper)) {
+  if (fs.existsSync(arquivoFreemode5)) {
     try {
-      fs.unlinkSync(arquivoHyper);
+      fs.unlinkSync(arquivoFreemode5);
       console.log('Arquivo desinstalado com sucesso!');
     } catch (err) {
-      console.error('Erro ao desinstalar o arquivo:', err);
+      console.error('Erro ao desinstalar o arquivo: "freemode5":', err);
     }
   } else {
     console.log('Arquivo não encontrado. Nenhuma ação necessária.');

@@ -88,6 +88,10 @@ button:hover {
   background-color: #555;
 }
 
+.install-button {
+  margin-top: 20px;
+}
+
 .container {
   margin: 0 auto;
   overflow: hidden;
