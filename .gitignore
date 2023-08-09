@@ -1,6 +1,9 @@
 # packages
 /node_modules
 
+# files
+/mods
+
 # build files and directories
 /dist
 

@@ -158,6 +158,59 @@ function instalarSkin1(destino) {
   });
 }
 
+function instalarSkin2(destino) {
+  const arquivoOrigem = path.join(__dirname, 'mods', 'skin2.rpf');
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'skin2.rpf');
+
+  fs.copyFile(arquivoOrigem, arquivoDestino, (err) => {
+    if (err) {
+      console.error('Erro ao instalar o arquivo:', err);
+    } else {
+      console.log('Instalada com Sucesso!');
+    }
+  });
+}
+
+function instalarSkin3(destino) {
+  const arquivoOrigem = path.join(__dirname, 'mods', 'skin3.rpf');
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'skin3.rpf');
+
+  fs.copyFile(arquivoOrigem, arquivoDestino, (err) => {
+    if (err) {
+      console.error('Erro ao instalar o arquivo:', err);
+    } else {
+      console.log('Instalada com Sucesso!');
+    }
+  });
+}
+
+function instalarSkin4(destino) {
+  const arquivoOrigem = path.join(__dirname, 'mods', 'skin4.rpf');
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'skin4.rpf');
+
+  fs.copyFile(arquivoOrigem, arquivoDestino, (err) => {
+    if (err) {
+      console.error('Erro ao instalar o arquivo:', err);
+    } else {
+      console.log('Instalada com Sucesso!');
+    }
+  });
+}
+
+function instalarSkin5(destino) {
+  const arquivoOrigem = path.join(__dirname, 'mods', 'skin5.rpf');
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'skin5.rpf');
+
+  fs.copyFile(arquivoOrigem, arquivoDestino, (err) => {
+    if (err) {
+      console.error('Erro ao instalar o arquivo:', err);
+    } else {
+      console.log('Instalada com Sucesso!');
+    }
+  });
+}
+
+
 
 
 module.exports = {
@@ -167,4 +220,8 @@ module.exports = {
   instalarFreemode4,
   instalarFreemode5,
   instalarSkin1,
+  instalarSkin2,
+  instalarSkin3,
+  instalarSkin4,
+  instalarSkin5
 };

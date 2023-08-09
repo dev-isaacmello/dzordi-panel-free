@@ -88,7 +88,7 @@ button:hover {
 }
 
 .install-button {
-  margin-top: 20px;
+  margin-top: -10px;
 }
 
 .container {
@@ -104,8 +104,8 @@ button:hover {
 .block {
   text-align: center;
   align-items: center;
-  width: 180px;
-  height: 220px;
+  width: 360px;
+  height: 300px;
   padding: 40px;
   border-radius: 2%;
   margin: 10px;
@@ -117,8 +117,9 @@ button:hover {
 }
 
 .block img {
-  width: 180px;
-  object-fit: cover;
+  margin-top: -20px;
+  border-radius: 2%;
+  width: 400px;
 }
 
 .block:hover {
@@ -128,9 +129,10 @@ button:hover {
 
 
 .block p {
-  font-size: 16px;
+  font-size: 20px;
+  padding-bottom: 6px;
   font-family: 'Poppins', sans-serif;
-  margin-bottom: 20px;
+  width: 400px;
   color: white;
 }
 
@@ -147,12 +149,13 @@ button:hover {
 }
 
 .buttons button {
-  width: 80px;
-  height: 30px;
+  width: 400px;
+  height: 50px;
   border: none;
   background-color: #eeeeee;
   color: #000000;
-  font-size: 14px;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.2s ease;

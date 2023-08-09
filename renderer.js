@@ -5,13 +5,21 @@ const { instalarFreemode1,
   instalarFreemode3,
   instalarFreemode4,
   instalarFreemode5,
-  instalarSkin1, } = require('./install');
+  instalarSkin1,
+  instalarSkin2,
+  instalarSkin3,
+  instalarSkin4,
+  instalarSkin5 } = require('./install');
 const {  desinstalarFreemode1, 
   desinstalarFreemode2, 
   desinstalarFreemode3, 
   desinstalarFreemode4, 
   desinstalarFreemode5, 
-  desinstalarSkin1 } = require('./uninstall');
+  desinstalarSkin1,
+  desinstalarSkin2,
+  desinstalarSkin3,
+  desinstalarSkin4,
+  desinstalarSkin5 } = require('./uninstall');
 
 // MOD 1
 // Função para alterar a classe do botão para "clicked"
@@ -215,6 +223,131 @@ function handleSkin1ButtonClick(buttonElement) {
   toggleButtonColor(buttonElement);
   saveButtonState('buttonState_skin1', !isInstalled);
 }
+
+// Obtendo o botão 'skin2' por ID e adicionando o evento de clique
+const skin2Button = document.getElementById('skin2');
+skin2Button.addEventListener('click', () => {
+  handleSkin2ButtonClick(skin2Button);
+});
+
+// Restaurando o estado do botão 'skin2'
+const isSkin2ButtonClicked = getButtonState('buttonState_skin2');
+if (isSkin2ButtonClicked) {
+  toggleButtonColor(skin2Button);
+  skin2Button.textContent = 'Desinstalar';
+}
+
+// Função para lidar com a ação de instalação/desinstalação do mod skin2
+function handleSkin2ButtonClick(buttonElement) {
+  const installText = 'Instalar';
+  const uninstallText = 'Desinstalar';
+
+  const isInstalled = buttonElement.classList.contains('clicked');
+  if (isInstalled) {
+    desinstalarSkin2();
+    buttonElement.textContent = installText;
+  } else {
+    instalarSkin2();
+    buttonElement.textContent = uninstallText;
+  }
+
+  toggleButtonColor(buttonElement);
+  saveButtonState('buttonState_skin2', !isInstalled);
+}
+
+// Obtendo o botão 'skin3' por ID e adicionando o evento de clique
+const skin3Button = document.getElementById('skin3');
+skin3Button.addEventListener('click', () => {
+  handleSkin3ButtonClick(skin3Button);
+});
+
+// Restaurando o estado do botão 'skin3'
+const isSkin3ButtonClicked = getButtonState('buttonState_skin3');
+if (isSkin3ButtonClicked) {
+  toggleButtonColor(skin3Button);
+  skin3Button.textContent = 'Desinstalar';
+}
+
+// Função para lidar com a ação de instalação/desinstalação do mod skin3
+function handleSkin3ButtonClick(buttonElement) {
+  const installText = 'Instalar';
+  const uninstallText = 'Desinstalar';
+
+  const isInstalled = buttonElement.classList.contains('clicked');
+  if (isInstalled) {
+    desinstalarSkin3();
+    buttonElement.textContent = installText;
+  } else {
+    instalarSkin3();
+    buttonElement.textContent = uninstallText;
+  }
+
+  toggleButtonColor(buttonElement);
+  saveButtonState('buttonState_skin3', !isInstalled);
+}
+
+// Obtendo o botão 'skin4' por ID e adicionando o evento de clique
+const skin4Button = document.getElementById('skin4');
+skin4Button.addEventListener('click', () => {
+  handleSkin4ButtonClick(skin4Button);
+});
+
+// Restaurando o estado do botão 'skin4'
+const isSkin4ButtonClicked = getButtonState('buttonState_skin4');
+if (isSkin4ButtonClicked) {
+  toggleButtonColor(skin4Button);
+  skin4Button.textContent = 'Desinstalar';
+}
+
+// Função para lidar com a ação de instalação/desinstalação do mod skin4
+function handleSkin4ButtonClick(buttonElement) {
+  const installText = 'Instalar';
+  const uninstallText = 'Desinstalar';
+
+  const isInstalled = buttonElement.classList.contains('clicked');
+  if (isInstalled) {
+    desinstalarSkin4();
+    buttonElement.textContent = installText;
+  } else {
+    instalarSkin4();
+    buttonElement.textContent = uninstallText;
+  }
+
+  toggleButtonColor(buttonElement);
+  saveButtonState('buttonState_skin4', !isInstalled);
+}
+
+// Obtendo o botão 'skin5' por ID e adicionando o evento de clique
+const skin5Button = document.getElementById('skin5');
+skin5Button.addEventListener('click', () => {
+  handleSkin5ButtonClick(skin5Button);
+});
+
+// Restaurando o estado do botão 'skin5'
+const isSkin5ButtonClicked = getButtonState('buttonState_skin5');
+if (isSkin5ButtonClicked) {
+  toggleButtonColor(skin5Button);
+  skin5Button.textContent = 'Desinstalar';
+}
+
+// Função para lidar com a ação de instalação/desinstalação do mod skin5
+function handleSkin5ButtonClick(buttonElement) {
+  const installText = 'Instalar';
+  const uninstallText = 'Desinstalar';
+
+  const isInstalled = buttonElement.classList.contains('clicked');
+  if (isInstalled) {
+    desinstalarSkin5();
+    buttonElement.textContent = installText;
+  } else {
+    instalarSkin5();
+    buttonElement.textContent = uninstallText;
+  }
+
+  toggleButtonColor(buttonElement);
+  saveButtonState('buttonState_skin5', !isInstalled);
+}
+
 
 
 

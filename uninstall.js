@@ -103,6 +103,67 @@ function desinstalarSkin1() {
   }
 }
 
+function desinstalarSkin2() {
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'skin2.rpf');
+
+  if (fs.existsSync(arquivoDestino)) {
+    try {
+      fs.unlinkSync(arquivoDestino);
+      console.log('Arquivo desinstalado com sucesso!');
+    } catch (err) {
+      console.error('Erro ao desinstalar o arquivo:', err);
+    }
+  } else {
+    console.log('Arquivo não encontrado. Nenhuma ação necessária.');
+  }
+}
+
+function desinstalarSkin3() {
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'skin3.rpf');
+
+  if (fs.existsSync(arquivoDestino)) {
+    try {
+      fs.unlinkSync(arquivoDestino);
+      console.log('Arquivo desinstalado com sucesso!');
+    } catch (err) {
+      console.error('Erro ao desinstalar o arquivo:', err);
+    }
+  } else {
+    console.log('Arquivo não encontrado. Nenhuma ação necessária.');
+  }
+}
+
+function desinstalarSkin4() {
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'skin4.rpf');
+
+  if (fs.existsSync(arquivoDestino)) {
+    try {
+      fs.unlinkSync(arquivoDestino);
+      console.log('Arquivo desinstalado com sucesso!');
+    } catch (err) {
+      console.error('Erro ao desinstalar o arquivo:', err);
+    }
+  } else {
+    console.log('Arquivo não encontrado. Nenhuma ação necessária.');
+  }
+}
+
+function desinstalarSkin5() {
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'skin5.rpf');
+
+  if (fs.existsSync(arquivoDestino)) {
+    try {
+      fs.unlinkSync(arquivoDestino);
+      console.log('Arquivo desinstalado com sucesso!');
+    } catch (err) {
+      console.error('Erro ao desinstalar o arquivo:', err);
+    }
+  } else {
+    console.log('Arquivo não encontrado. Nenhuma ação necessária.');
+  }
+}
+
+
 
 module.exports = { 
   desinstalarFreemode1, 
@@ -110,4 +171,9 @@ module.exports = {
   desinstalarFreemode3, 
   desinstalarFreemode4, 
   desinstalarFreemode5, 
-  desinstalarSkin1};
+  desinstalarSkin1,
+  desinstalarSkin2,
+  desinstalarSkin3,
+  desinstalarSkin4,
+  desinstalarSkin5
+};
