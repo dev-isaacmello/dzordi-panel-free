@@ -3,7 +3,7 @@ const path = require('path');
 
 
 
-function instalarArquivo(destino) {
+function instalarFreemode1(destino) {
   const pastaDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'citizen');
 
   // Verifica se a pasta "citizen" existe antes de prosseguir
@@ -145,12 +145,26 @@ function instalarFreemode5(destino) {
   });
 }
 
+function instalarSkin1(destino) {
+  const arquivoOrigem = path.join(__dirname, 'mods', 'skin1.rpf');
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'skin1.rpf');
+
+  fs.copyFile(arquivoOrigem, arquivoDestino, (err) => {
+    if (err) {
+      console.error('Erro ao instalar o arquivo:', err);
+    } else {
+      console.log('Instalada com Sucesso!');
+    }
+  });
+}
+
 
 
 module.exports = {
-  instalarArquivo,
+  instalarFreemode1,
   instalarFreemode2,
   instalarFreemode3,
   instalarFreemode4,
   instalarFreemode5,
+  instalarSkin1,
 };

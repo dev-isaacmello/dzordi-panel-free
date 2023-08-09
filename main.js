@@ -3,8 +3,26 @@ const path = require('path');
 
 let mainWindow;
 
-function createWindow() {
-  // Cria uma janela do Electron
+function createLoadingWindow() {
+  const loadingWindow = new BrowserWindow({
+    width: 200,
+    height: 250,
+    frame: false,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false
+    }
+  });
+
+  loadingWindow.loadFile(path.join(__dirname, 'loading.html'));
+
+  setTimeout(() => {
+    createMainWindow();
+    loadingWindow.close();
+  }, 3000); // Atraso de 5 segundos (5000 milissegundos)
+}
+
+function createMainWindow() {
   mainWindow = new BrowserWindow({
     width: 1120,
     height: 800,
@@ -16,40 +34,30 @@ function createWindow() {
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false // Desabilita o isolamento de contexto para suportar o require no renderer process
+      contextIsolation: false
     }
   });
 
-  // Carrega o arquivo index.html na janela do Electron
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-  // Abre o DevTools (Ferramentas de Desenvolvedor) - opcional
-  // mainWindow.webContents.openDevTools();
-
-  // Evento emitido quando a janela é fechada
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
 }
 
-// Evento emitido quando o Electron terminou de inicializar e está pronto para criar janelas
-app.on('ready', createWindow);
+app.on('ready', createLoadingWindow);
 
-// Evento emitido quando todas as janelas foram fechadas
 app.on('window-all-closed', () => {
-  // No macOS, é comum que as aplicações e suas barra de menus fiquem ativas até que o usuário feche explicitamente com Cmd + Q
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
 app.on('activate', () => {
-  // No macOS, é comum recriar a janela do aplicativo quando o ícone do Dock é clicado e não há outras janelas abertas.
   if (mainWindow === null) {
-    createWindow();
+    createLoadingWindow();
   }
 });
-
 
 ipcMain.on('minimize', () => {
   mainWindow.minimize();
@@ -66,4 +74,3 @@ ipcMain.on('maximize', () => {
 ipcMain.on('close', () => {
   app.quit();
 });
-

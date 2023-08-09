@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&family=Poppins:wght@500&display=swap');
 
 body {
-  background: rgb(138,138,138);
   background: linear-gradient(90deg, rgba(138,138,138,1) 0%, rgba(5,19,83,1) 100%);
   margin: 0;
   padding: 0;
