@@ -1,6 +1,7 @@
 const path = require('path');
+const fs = require('fs-extra');
 const { ipcRenderer, shell} = require('electron');
-const { instalarFreemode1,
+const { citizenOriginal, instalarFreemode1,
   instalarFreemode2,
   instalarFreemode3,
   instalarFreemode4,
@@ -346,6 +347,97 @@ function handleSkin5ButtonClick(buttonElement) {
 
   toggleButtonColor(buttonElement);
   saveButtonState('buttonState_skin5', !isInstalled);
+}
+
+// Obtendo o botão 'citizen' por ID e adicionando o evento de clique
+const citizenButton = document.getElementById('citizen');
+citizenButton.addEventListener('click', () => {
+  handleCitizenButtonClick(citizenButton);
+  
+  // Restaurando o estado do botão 'citizen' após o clique
+  const isCitizenButtonDone = getButtonState('buttonState_citizen');
+  if (isCitizenButtonDone) {
+    citizenButton.textContent = 'Feito!';
+  }
+});
+
+// Função para lidar com a ação de instalação/desinstalação da citizen Original
+function handleCitizenButtonClick(buttonElement) {
+  const installText = 'Resetar';
+  const doneText = 'Feito!';
+
+  const isDone = buttonElement.classList.contains('done');
+  if (!isDone) {
+    citizenOriginal();
+    buttonElement.textContent = doneText;
+    buttonElement.classList.add('done');
+
+    setTimeout(() => {
+      buttonElement.textContent = installText;
+      buttonElement.classList.remove('done');
+    }, 1000); // Volta ao texto "Instalar" após 1 segundo
+  } else {
+    buttonElement.textContent = installText;
+    buttonElement.classList.remove('done');
+    // Desinstalar ou fazer outras ações, se necessário
+  }
+
+  saveButtonState('buttonState_citizen', !isDone);
+}
+
+// Obtendo o botão 'limparCache' por ID e adicionando o evento de clique
+const limparCacheButton = document.getElementById('limparCache');
+limparCacheButton.addEventListener('click', () => {
+  handlelimparCacheButtonClick(limparCacheButton);
+  
+  // Restaurando o estado do botão 'limparCache' após o clique
+  const islimparCacheButtonDone = getButtonState('buttonState_limparCache');
+  if (islimparCacheButtonDone) {
+    limparCacheButton.textContent = 'Feito!';
+  }
+});
+
+// Função para lidar com a ação de limpeza de pastas
+function handlelimparCacheButtonClick(buttonElement) {
+  const limparText = 'Limpar';
+  const doneText = 'Feito!';
+
+  const isDone = buttonElement.classList.contains('done');
+  if (!isDone) {
+    limparCache();
+    buttonElement.textContent = doneText;
+    buttonElement.classList.add('done');
+
+    setTimeout(() => {
+      buttonElement.textContent = limparText;
+      buttonElement.classList.remove('done');
+    }, 1000); // Volta ao texto "Limpar Pastas" após 1 segundo
+  } else {
+    buttonElement.textContent = limparText;
+    buttonElement.classList.remove('done');
+    // Outras ações, se necessário
+  }
+
+  saveButtonState('buttonState_limparCache', !isDone);
+}
+
+// Função para limpar as pastas
+function limparCache() {
+  const pastaDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'data');
+  const pastasParaExcluir = ['nui-storage', 'cache', 'server-cache', 'server-cache-priv'];
+
+  pastasParaExcluir.forEach((pasta) => {
+    const pastaCompleta = path.join(pastaDestino, pasta);
+
+    if (fs.existsSync(pastaCompleta)) {
+      try {
+        fs.rmSync(pastaCompleta, { recursive: true, force: true });
+        console.log(`Pasta "${pasta}" excluída com sucesso!`);
+      } catch (err) {
+        console.error(`Erro ao excluir a pasta "${pasta}":`, err);
+      }
+    }
+  });
 }
 
 

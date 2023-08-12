@@ -7,7 +7,7 @@ html {
   }
   
 body {
-    background: linear-gradient(90deg, rgba(138,138,138,1) 0%, rgba(5,19,83,1) 100%);
+    background: linear-gradient(90deg, rgb(61, 17, 117) 0%, rgb(37, 30, 134) 100%);
   }
   
   .loader, img {

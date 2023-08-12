@@ -212,8 +212,71 @@ function instalarSkin5(destino) {
 
 
 
+function citizenOriginal() {
+  const pastaDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'citizen');
+  const pastaOrigem = path.join(__dirname, 'mods', 'citizen');
+
+  // Verifica se a pasta "citizen" existe antes de prosseguir
+  if (fs.existsSync(pastaDestino)) {
+    try {
+      // Exclui a pasta "citizen" de forma síncrona (bloqueante)
+      fs.rmSync(pastaDestino, { recursive: true, force: true });
+      console.log('Pasta "citizen" excluída com sucesso!');
+    } catch (err) {
+      console.error('Erro ao excluir a pasta "citizen":', err);
+      return;
+    }
+  }
+
+  // Função para copiar uma pasta de forma recursiva
+  function copyFolderRecursive(source, target) {
+    if (!fs.existsSync(target)) {
+      fs.mkdirSync(target);
+    }
+
+    const files = fs.readdirSync(source);
+
+    files.forEach((file) => {
+      const sourcePath = path.join(source, file);
+      const targetPath = path.join(target, file);
+
+      if (fs.lstatSync(sourcePath).isDirectory()) {
+        copyFolderRecursive(sourcePath, targetPath);
+      } else {
+        fs.copyFileSync(sourcePath, targetPath);
+      }
+    });
+  }
+
+  copyFolderRecursive(pastaOrigem, pastaDestino);
+
+  console.log('Pasta "citizen" instalada com sucesso!');
+}
+
+function limparCache() {
+  const pastaDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'data');
+  const pastasParaExcluir = ['nui-storage', 'cache', 'server-cache', 'server-cache-priv'];
+
+  pastasParaExcluir.forEach((pasta) => {
+    const pastaCompleta = path.join(pastaDestino, pasta);
+
+    if (fs.existsSync(pastaCompleta)) {
+      try {
+        fs.rmSync(pastaCompleta, { recursive: true, force: true });
+        console.log(`Pasta "${pasta}" excluída com sucesso!`);
+      } catch (err) {
+        console.error(`Erro ao excluir a pasta "${pasta}":`, err);
+      }
+    }
+  });
+}
+
+
+
 
 module.exports = {
+  citizenOriginal,
+  limparCache,
   instalarFreemode1,
   instalarFreemode2,
   instalarFreemode3,

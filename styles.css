@@ -2,13 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&family=Poppins:wght@500&display=swap');
 
 body {
-  background: linear-gradient(90deg, rgba(138,138,138,1) 0%, rgba(5,19,83,1) 100%);
+  background: linear-gradient(90deg, rgb(61, 17, 117) 0%, rgb(37, 30, 134) 100%);
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
 .header {
-  background-color: rgb(0, 24, 68);
   color: white;
   font-size: 14px;
   padding: 6px;
@@ -108,7 +107,8 @@ button:hover {
   height: 300px;
   padding: 40px;
   border-radius: 2%;
-  margin: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.13);
@@ -123,17 +123,29 @@ button:hover {
 }
 
 .block:hover {
-  transform: scale(1.1); /* Aumenta a escala do bloco em 1.1x ao passar o mouse */
+  transform: scale(1.06); /* Aumenta a escala do bloco em 1.1x ao passar o mouse */
   z-index: 1;
 }
 
 
 .block p {
-  font-size: 20px;
+  font-size: 18px;
   padding-bottom: 6px;
   font-family: 'Poppins', sans-serif;
   width: 400px;
   color: white;
+}
+
+#finalblock {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#finalblock img {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 2%;
+  width: 720px;
+  height: 520px;
 }
 
 .buttons {
@@ -163,9 +175,14 @@ button:hover {
 
 
 .buttons button:hover {
-  background-color: #133577;
+  background-color: #440b5f;
   color: rgb(250, 246, 246); 
 }
+
+#buttonsvip {
+  padding-top: 30px;
+}
+
 
 #buttonvip {
   color: rgb(32, 0, 211);
@@ -242,6 +259,10 @@ button:hover {
   transition:all .25s;
 }
 
+#discord {
+  margin-top: -80px;
+}
+
 .footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
 
 .footer-distributed p.footer-links a:hover{text-decoration:underline;}
@@ -259,6 +280,21 @@ button:hover {
   .footer-distributed .footer-left p.footer-links {
     line-height: 1.8;
   }
+
+  #finalblock {
+    width: 440px;
+    height: 300px;
+  }
+  
+  #finalblock img {
+    width: 460px;
+    height: 280px;
+  }
+  
+  #buttonsvip {
+    width: 400px;
+    padding-top: 20px;
+    }
 }
 
 

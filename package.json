@@ -1,7 +1,7 @@
 {
     "name": "dzordi_panel",
     "version": "1.0.0",
-    "description": "Vip Panel Dzordi BETA",
+    "description": "Free Panel Dzordi",
     "main": "main.js",
     "scripts": {
         "package-win": "electron-builder --win",
