@@ -10,7 +10,7 @@ const { citizenOriginal, instalarFreemode1,
   instalarSkin2,
   instalarSkin3,
   instalarSkin4,
-  instalarSkin5 } = require('./install');
+  instalarSkin5, instalarSkin6 } = require('./install');
 const {  desinstalarFreemode1, 
   desinstalarFreemode2, 
   desinstalarFreemode3, 
@@ -20,7 +20,7 @@ const {  desinstalarFreemode1,
   desinstalarSkin2,
   desinstalarSkin3,
   desinstalarSkin4,
-  desinstalarSkin5 } = require('./uninstall');
+  desinstalarSkin5, desinstalarSkin6 } = require('./uninstall');
   
 // MOD 1
 // Função para alterar a classe do botão para "clicked"
@@ -347,6 +347,37 @@ function handleSkin5ButtonClick(buttonElement) {
 
   toggleButtonColor(buttonElement);
   saveButtonState('buttonState_skin5', !isInstalled);
+}
+
+// Obtendo o botão 'skin5' por ID e adicionando o evento de clique
+const skin6Button = document.getElementById('skin6');
+skin6Button.addEventListener('click', () => {
+  handleSkin6ButtonClick(skin6Button);
+});
+
+// Restaurando o estado do botão 'skin5'
+const isSkin6ButtonClicked = getButtonState('buttonState_skin6');
+if (isSkin6ButtonClicked) {
+  toggleButtonColor(skin6Button);
+  skin6Button.textContent = 'Desinstalar';
+}
+
+// Função para lidar com a ação de instalação/desinstalação do mod skin5
+function handleSkin6ButtonClick(buttonElement) {
+  const installText = 'Instalar';
+  const uninstallText = 'Desinstalar';
+
+  const isInstalled = buttonElement.classList.contains('clicked');
+  if (isInstalled) {
+    desinstalarSkin6();
+    buttonElement.textContent = installText;
+  } else {
+    instalarSkin6();
+    buttonElement.textContent = uninstallText;
+  }
+
+  toggleButtonColor(buttonElement);
+  saveButtonState('buttonState_skin6', !isInstalled);
 }
 
 // Obtendo o botão 'citizen' por ID e adicionando o evento de clique

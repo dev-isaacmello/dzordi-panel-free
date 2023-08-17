@@ -163,6 +163,21 @@ function desinstalarSkin5() {
   }
 }
 
+function desinstalarSkin6() {
+  const arquivoDestino = path.join(process.env.LOCALAPPDATA, 'FiveM', 'FiveM.app', 'mods', 'skin6.rpf');
+
+  if (fs.existsSync(arquivoDestino)) {
+    try {
+      fs.unlinkSync(arquivoDestino);
+      console.log('Arquivo desinstalado com sucesso!');
+    } catch (err) {
+      console.error('Erro ao desinstalar o arquivo:', err);
+    }
+  } else {
+    console.log('Arquivo não encontrado. Nenhuma ação necessária.');
+  }
+}
+
 
 
 module.exports = { 
@@ -175,5 +190,6 @@ module.exports = {
   desinstalarSkin2,
   desinstalarSkin3,
   desinstalarSkin4,
-  desinstalarSkin5
+  desinstalarSkin5,
+  desinstalarSkin6
 };
