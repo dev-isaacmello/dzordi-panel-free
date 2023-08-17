@@ -1,50 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&family=Poppins:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import "/dist.min.css";
 
 
 body {
-  background: linear-gradient(90deg, rgb(61, 17, 117) 0%, rgb(37, 30, 134) 100%);
+  background: rgb(0,125,255);
+  background: linear-gradient(90deg, rgba(0,125,255,1) 0%, rgba(8,75,179,1) 25%, rgba(13,32,113,1) 75%, rgba(0,0,0,1) 100%);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins" , sans-serif;
 }
 
-.fixed-header {
-  position: fixed;
+.header {
+  background: rgb(0,125,255);
+  background: linear-gradient(90deg, rgba(0,125,255,1) 0%, rgba(8,75,179,1) 25%, rgba(13,32,113,1) 75%, rgba(0,0,0,1) 100%);
   color: white;
   font-size: 14px;
-  padding: 6px;
-  display: flex; /* Exibe os elementos em formato de flexbox */
-  align-items: center; /* Centraliza verticalmente os elementos */
-  justify-content: space-between; /* Coloca os elementos nos extremos (esquerda e direita) */
-  -webkit-app-region: drag; /* Permite arrastar a janela ao clicar e arrastar na barra */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  -webkit-app-region: drag;
+  z-index: 95; /* Certifica-se de que o cabeçalho fique acima de outros elementos */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  z-index: 100; /* Certifica-se de que o cabeçalho fique acima de outros elementos */
 }
 
-.header {
-  color: white;
-  font-size: 14px;
-  padding: 6px;
-  display: flex; /* Exibe os elementos em formato de flexbox */
-  align-items: center; /* Centraliza verticalmente os elementos */
-  justify-content: space-between; /* Coloca os elementos nos extremos (esquerda e direita) */
-  -webkit-app-region: drag; /* Permite arrastar a janela ao clicar e arrastar na barra */
+.header .controls {
+  display: flex;
+  align-items: center;
 }
+
+
 
 /* Estilo do título do cabeçalho */
 .title {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding-top: 10px;
-  padding-left: 20px;
+  padding-left: 195px;
   flex: 1; /* Expande para ocupar o espaço restante no cabeçalho */
+  text-align: center;
 }
 
 .header2 {
-  background-color: rgba(0, 0, 0, 0.15);
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgb(0, 0, 0) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
   color: white;
   font-size: 28px;
   padding: 6px;
@@ -56,26 +62,29 @@ body {
 
 /* Estilo do título do cabeçalho */
 .title2 {
+
   display: flex;
   justify-content: center;
   flex: 1; /* Expande para ocupar o espaço restante no cabeçalho */
 }
 
 .header3 {
-    background-color: rgba(0, 0, 0, 0.15);
-    color: white;
-    font-size: 28px;
-    padding: 6px;
-    display: flex; /* Exibe os elementos em formato de flexbox */
-    align-items: center; /* Centraliza verticalmente os elementos */
-    justify-content: center;
-    -webkit-app-region: drag; /* Permite arrastar a janela ao clicar e arrastar na barra */
+  margin-top: 40px;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 25%, rgb(0, 0, 0) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%);
+  color: white;
+  font-size: 28px;
+  padding: 6px;
+  display: flex; /* Exibe os elementos em formato de flexbox */
+  align-items: center; /* Centraliza verticalmente os elementos */
+  justify-content: center;
+  -webkit-app-region: drag; /* Permite arrastar a janela ao clicar e arrastar na barra */
 }
 
 .beta {
   font-family: 'Poppins', sans-serif;
+  color: white;
   margin-top: 2px;
-  margin-left: 42px;
   border-radius: 2%;
   font-size: 100%; /* Valor menor que 100% para reduzir o tamanho do texto */
 }
@@ -100,7 +109,10 @@ button {
 }
 
 button:hover {
-  background-color: #555;
+  transform: scale(1.02);
+  color: rgb(0, 0, 0);
+  background: white;
+  border-radius: 2px;
 }
 
 .install-button {
@@ -174,7 +186,8 @@ button:hover {
 
 /* Estilo para o botão quando está na classe "clicked" */
 .buttons button.clicked {
-  background-color: rgb(255, 0, 0);
+  background: rgb(255,252,0);
+  background: linear-gradient(90deg, rgba(255,252,0,1) 0%, rgba(179,8,8,1) 25%, rgba(179,8,8,1) 75%, rgba(255,252,0,1) 100%);
   color: white;
 }
 
@@ -193,7 +206,8 @@ button:hover {
 
 
 .buttons button:hover {
-  background-color: #440b5f;
+  background: rgb(0,202,255);
+  background: linear-gradient(90deg, rgba(0,202,255,1) 0%, rgba(8,75,179,1) 25%, rgba(8,75,179,1) 75%, rgba(0,202,255,1) 100%);
   color: rgb(250, 246, 246); 
 }
 
@@ -217,10 +231,12 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
   width: 60px;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.13);
-  padding: 6px 14px;
+  padding: 6px 18px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 99;
   transition: all 0.5s ease;
 }
@@ -454,20 +470,27 @@ button:hover {
 }
 
 
+/* Estilize a barra de rolagem na barra lateral */
 ::-webkit-scrollbar {
-  width: 10px;
+  background: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  width: 10px; /* Largura da barra de rolagem */
 }
 
-/* Estilo do "thumb" (alça da barra de rolagem) */
 ::-webkit-scrollbar-thumb {
-  background-color: #888; /* Cor da alça da barra de rolagem */
-  border-radius: 5px; /* Borda arredondada da alça da barra de rolagem */
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
 }
 
-/* Estilo do "thumb" quando hover */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Cor da alça da barra de rolagem ao passar o mouse */
+  background-color: #008cff; /* Cor do thumb (alça) da barra de rolagem quando hover */
 }
+
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Cor do track (fundo) da barra de rolagem */
+}
+
+
 
 #citizens, #tweaks, #vip, #skins {
   padding-left: 88px;

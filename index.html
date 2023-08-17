@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dzordi Panel BETA</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-  <div class="sidebar">
-    <ul class="nav-list">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dzordi Panel BETA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul class="nav-list">
+      <div class="beta">BETA</div>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-house"></i>
+          <span class="tooltip">Inicio</span>
+        </a>
+      </li>
       <li>
         <a href="#citizens">
           <i class="fa-solid fa-gift"></i>
@@ -36,19 +43,25 @@
           <span class="tooltip">VIP</span>
         </a>
       </li>
+      <li>
+        <a onclick="openDiscord() "href="#" >
+          <i class="fa-brands fa-discord"></i>
+          <span class="tooltip">Acessar Nosso Discord</span>
+        </a>
+      </li>
     </ul>
   </div>  
-  <section id="citizens" class="citizens">
   <div class="header">
-    <div class="beta">BETA</div>
-    <div class="title">Dzordi Panel v1.0.0</div>
+    <div class="title">Dzordi Panel v1.0.0
+    </div>
     <div class="controls">
       <button id="minimize-btn"><i class="fa-solid fa-minus"></i></button>
       <button id="maximize-btn"><i class="fa-solid fa-expand"></i></button>
       <button id="close-btn"><i class="fa-solid fa-xmark"></i></button>
     </div>
   </div>
-  <div class="header3">Citizens FREE</div>
+  <section id="citizens" class="citizens">
+  <div class="header3">Citizens | Gráficos</div>
     <div class="container">
       <!-- Conteúdo principal da página -->
       <div class="block" id="block1">
@@ -105,7 +118,7 @@
     </div>
   </section>
   <section id="skins">
-    <div class="header3">Skins FREE</div>
+    <div class="header3">Skins</div>
     <div class="container">
       <!-- Conteúdo principal da página -->
       <div class="block">

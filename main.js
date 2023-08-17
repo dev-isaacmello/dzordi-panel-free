@@ -17,19 +17,21 @@ function createLoadingWindow() {
   loadingWindow.loadFile(path.join(__dirname, 'loading.html'));
 
   setTimeout(() => {
-    createMainWindow();
+    createMainWindow(); // Carrega a página principal em segundo plano
     loadingWindow.close();
-  }, 3000); // Atraso de 5 segundos (5000 milissegundos)
+  }, 3000); // Espera 5 segundos (5000 milissegundos) antes de exibir a página principal
 }
+
 
 function createMainWindow() {
   mainWindow = new BrowserWindow({
     width: 1600,
     height: 900,
-    minWidth: 560,
-    minHeight: 600,
+    minWidth: 700,
+    minHeight: 900,
     maxWidth: 1920,
     maxHeight: 1080,
+    show: false, // Inicialmente oculta a janela principal
     frame: false, 
     autoHideMenuBar: true,
     webPreferences: {
@@ -40,10 +42,15 @@ function createMainWindow() {
 
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show(); // Mostra a janela principal quando estiver pronta
+  });
+
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
 }
+
 
 app.on('ready', createLoadingWindow);
 
