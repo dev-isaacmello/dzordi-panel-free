@@ -21,6 +21,7 @@ const {  desinstalarFreemode1,
   desinstalarSkin3,
   desinstalarSkin4,
   desinstalarSkin5 } = require('./uninstall');
+const header = document.querySelector('.header');
 
 // MOD 1
 // Função para alterar a classe do botão para "clicked"
@@ -440,6 +441,20 @@ function limparCache() {
   });
 }
 
+
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const header = document.querySelector('.header'); // Seleciona o elemento com a classe 'header'
+
+  if (header) {
+    if (scrollTop > 0) {
+      header.classList.add('fixed-header');
+    } else {
+      header.classList.remove('fixed-header');
+    }
+  }
+});
 
 
 

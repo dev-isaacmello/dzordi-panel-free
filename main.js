@@ -24,8 +24,8 @@ function createLoadingWindow() {
 
 function createMainWindow() {
   mainWindow = new BrowserWindow({
-    width: 1120,
-    height: 800,
+    width: 1600,
+    height: 900,
     minWidth: 560,
     minHeight: 600,
     maxWidth: 1920,

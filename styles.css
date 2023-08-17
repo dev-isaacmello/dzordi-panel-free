@@ -1,12 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 
 body {
   background: linear-gradient(90deg, rgb(61, 17, 117) 0%, rgb(37, 30, 134) 100%);
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
 }
+
+.fixed-header {
+  position: fixed;
+  color: white;
+  font-size: 14px;
+  padding: 6px;
+  display: flex; /* Exibe os elementos em formato de flexbox */
+  align-items: center; /* Centraliza verticalmente os elementos */
+  justify-content: space-between; /* Coloca os elementos nos extremos (esquerda e direita) */
+  -webkit-app-region: drag; /* Permite arrastar a janela ao clicar e arrastar na barra */
+  width: 100%;
+  z-index: 100; /* Certifica-se de que o cabeçalho fique acima de outros elementos */
+}
+
 .header {
   color: white;
   font-size: 14px;
@@ -123,7 +140,8 @@ button:hover {
 }
 
 .block:hover {
-  transform: scale(1.06); /* Aumenta a escala do bloco em 1.1x ao passar o mouse */
+  transform: scale(1.02); 
+  background-color: rgba(255, 255, 255, 0.37);
   z-index: 1;
 }
 
@@ -142,7 +160,7 @@ button:hover {
 }
 
 #finalblock img {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: 2%;
   width: 720px;
   height: 520px;
@@ -192,15 +210,153 @@ button:hover {
   color: rgb(229, 255, 0);
 }
 
+/* Estilização básica para a barra lateral */
+.sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 60px;
+  background-color: rgba(255, 255, 255, 0.13);
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar i {
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.sidebar .nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-right: 40px;
+  height: 100%;
+  gap: 10px; /* Ajuste o valor para controlar o espaçamento entre os itens */
+}
+
+
+
+.sidebar li {
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+
+.sidebar li .tooltip {
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  color: rgb(0, 0, 0);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+
+.sidebar li:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sidebar input {
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #1d1b31;
+}
+
+.sidebar li a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #c0c0c03d;
+}
+
+.sidebar li a:hover {
+  background-color: rgba(255, 255, 255, 0.664);
+  transition: 0.1s ease;
+  transform: scale(1.1);
+}
+
+.sidebar li a .links_name {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.sidebar.open li a .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i {
+  transition: all 0.5s ease;
+  color: #11101D;
+}
+
+.sidebar li i {
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+
 
 .footer-distributed {
   background-color: rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   box-sizing: border-box;
   width: 100%;
   text-align: left;
   font: normal 16px sans-serif;
   padding: 45px 50px;
+  padding-left: 160px;
 }
 
 .footer-distributed .footer-left p {
@@ -311,6 +467,10 @@ button:hover {
 /* Estilo do "thumb" quando hover */
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555; /* Cor da alça da barra de rolagem ao passar o mouse */
+}
+
+#citizens, #tweaks, #vip, #skins {
+  padding-left: 88px;
 }
 
 

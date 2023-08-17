@@ -4,18 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dzordi Panel BETA</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <div class="sidebar">
+    <ul class="nav-list">
+      <li>
+        <a href="#citizens">
+          <i class="fa-solid fa-gift"></i>
+          <span class="tooltip">Citizens</span>
+        </a>
+      </li>
+      <li>
+        <a href="#skins">
+          <i class='fa-solid fa-gun'></i>
+          <span class="tooltip">Skins</span>
+        </a>
+      </li>
+      <li>
+        <a href="#tweaks">
+          <i class="fa-solid fa-fire"></i>
+          <span class="tooltip">Tweaks</span>
+        </a>
+      </li>
+      <li>
+        <a href="#vip">
+          <i class="fa-solid fa-crown"></i>
+          <span class="tooltip">VIP</span>
+        </a>
+      </li>
+    </ul>
+  </div>  
   <section id="citizens" class="citizens">
   <div class="header">
     <div class="beta">BETA</div>
     <div class="title">Dzordi Panel v1.0.0</div>
     <div class="controls">
-      <button id="minimize-btn">&#x2500;</button>
-      <button id="maximize-btn">&#x2750;</button>
-      <button id="close-btn">&#x2715;</button>
+      <button id="minimize-btn"><i class="fa-solid fa-minus"></i></button>
+      <button id="maximize-btn"><i class="fa-solid fa-expand"></i></button>
+      <button id="close-btn"><i class="fa-solid fa-xmark"></i></button>
     </div>
   </div>
   <div class="header3">Citizens FREE</div>
@@ -74,7 +104,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="skins">
     <div class="header3">Skins FREE</div>
     <div class="container">
       <!-- Conteúdo principal da página -->
@@ -168,7 +198,7 @@
             <img class="mainImage" src="./assets/vippanel.jpg" alt="Imagem 1">
           </div>
           <div class="buttons" id="buttonsvip">
-            <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class='bx bxs-crown'></i></button>
+            <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
           </div>
         </div>
       </div>
