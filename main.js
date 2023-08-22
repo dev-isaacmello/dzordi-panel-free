@@ -56,7 +56,7 @@ function createMainWindow() {
   const accessToken = store.get("discordAccessToken");
 
   if (!accessToken || !user || !userRoles) return createLoginWindow();
-  if (!["1143409659852640408", "1143409936596996157"].some(id => userRoles.includes(id))) return createLoginWindow();
+  if (!["1143409659852640408", "1143409936596996157", "1143409639640289300"].some(id => userRoles.includes(id))) return createLoginWindow();
 
   mainWindow = new BrowserWindow({
     width: 1600,
