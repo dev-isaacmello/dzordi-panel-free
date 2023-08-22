@@ -476,10 +476,18 @@ function limparCache() {
 ////
 function openDiscord() {
   // Substitua o link abaixo pelo link de convite do servidor do Discord que você deseja redirecionar
-  const discordInviteLink = "https://discord.gg/dzordi";
+  const discordInviteLink = "https://discord.gg/EbxB748zPF";
 
   // Abre o link do Discord em uma nova aba
   shell.openExternal(discordInviteLink);
+}
+
+function openytb() {
+  // Substitua o link abaixo pelo link de convite do servidor do Discord que você deseja redirecionar
+  const youtubeLink = "https://www.youtube.com/watch?v=3TLbO7qddm4&ab_channel=DzordiCommunity";
+
+  // Abre o link do Discord em uma nova aba
+  shell.openExternal(youtubeLink);
 }
 
 document.getElementById('minimize-btn').addEventListener('click', () => {

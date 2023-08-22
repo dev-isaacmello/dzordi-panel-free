@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupImageHover('block3', ['./assets/freemode3.jpg', './assets/freemode3night.jpg', './assets/freemode3fps.jpg']);
   setupImageHover('block4', ['./assets/freemode4.jpg', './assets/freemode4night.jpg', './assets/freemode4fps.jpg', './assets/freemode4night2.jpg']);
   // setupImageHover('block5', ['./assets/freemode5.jpg', './assets/freemode5night.jpg']);
-  setupImageHover('finalblock', ['./assets/vippanel.jpg', './assets/vippanel2.jpg', './assets/vippanel3.jpg', './assets/vippanel4.jpg', './assets/vippanel5.jpg' ]);
 });
 
 function setupImageHover(blockId, imageSrcList) {
