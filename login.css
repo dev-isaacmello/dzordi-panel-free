@@ -1,0 +1,15 @@
+.loginButton {
+    background-color: black;
+    color: white;
+    font-size: 0;
+    width: 6rem;
+    height: 2.5rem;
+    border: none;
+    margin-left: 0;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+.loginButton:hover {
+    background-color: none;
+}
