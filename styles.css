@@ -135,12 +135,16 @@ button:hover {
   width: 360px;
   height: 300px;
   padding: 40px;
-  border-radius: 2%;
   margin-top: 40px;
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.089);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   transition: transform 0.3s ease; /* Adiciona uma transição suave para a transformação */
 }
@@ -153,7 +157,7 @@ button:hover {
 
 .block:hover {
   transform: scale(1.02); 
-  background-color: rgba(255, 255, 255, 0.37);
+  background-color: rgba(255, 255, 255, 0.24);
   z-index: 1;
 }
 
@@ -209,6 +213,7 @@ button:hover {
   background: rgb(0,202,255);
   background: linear-gradient(90deg, rgba(0,202,255,1) 0%, rgba(8,75,179,1) 25%, rgba(8,75,179,1) 75%, rgba(0,202,255,1) 100%);
   color: rgb(250, 246, 246); 
+  transition: 0.3s ease;
 }
 
 #buttonsvip {
@@ -319,7 +324,11 @@ button:hover {
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.4s ease;
-  background: #c0c0c03d;
+  background: rgba(255, 255, 255, 0.089);
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .sidebar li a:hover {
