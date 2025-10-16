@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dzordi Panel BETA</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  </head>
-  <body>
-    <div class="sidebar">
-      <ul class="nav-list">
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dzordi Panel v1.0.1</title>
+  <link rel="stylesheet" href="../../../public/styles/styles.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="sidebar">
+    <ul class="nav-list">
       <div class="beta">BETA</div>
       <li>
         <a href="#">
@@ -44,285 +43,278 @@
         </a>
       </li>
       <li>
-        <a onclick="openDiscord() "href="#" >
+        <a onclick="openDiscord()" href="#">
           <i class="fa-brands fa-discord"></i>
           <span class="tooltip">Acessar Nosso Discord</span>
         </a>
       </li>
     </ul>
   </div>  
+
   <div class="header">
-    <div class="title">Dzordi Panel v1.0.1
-    </div>
+    <div class="title">Dzordi Panel v1.0.1</div>
     <div class="controls">
       <button id="minimize-btn"><i class="fa-solid fa-minus"></i></button>
       <button id="maximize-btn"><i class="fa-solid fa-expand"></i></button>
       <button id="close-btn"><i class="fa-solid fa-xmark"></i></button>
     </div>
   </div>
+
   <section id="citizens" class="citizens">
-  <div class="header3">Citizens | Gráficos</div>
+    <div class="header3">Citizens | Gráficos</div>
     <div class="container">
-      <!-- Conteúdo principal da página -->
       <div class="block" id="block1">
         <div class="imageContainer">
-          <img class="mainImage" src="./assets/freemode1.jpg" alt="Imagem 1">
+          <img class="mainImage" src="../../../public/assets/freemode1.jpg" alt="Citizen Dzordi 11.0">
         </div>
-        <p>Citizen Dzordi 11.0
-          | FPS + No Night
-        </p>
+        <p>Citizen Dzordi 11.0 | FPS + No Night</p>
         <div class="buttons">
           <button id="freemode1" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block" id="block2">
         <div class="imageContainer">
-          <img class="mainImage" src="./assets/freemode2.jpg" alt="Imagem 1">
+          <img class="mainImage" src="../../../public/assets/freemode2.jpg" alt="Citizen Dzordi 12.0">
         </div>
-        <p>Citizen Dzordi 12.0
-          | FPS
-        </p>
+        <p>Citizen Dzordi 12.0 | FPS</p>
         <div class="buttons">
           <button id="freemode2" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block" id="block3">
         <div class="imageContainer">
-          <img class="mainImage" src="./assets/freemode3.jpg" alt="Imagem 1">
+          <img class="mainImage" src="../../../public/assets/freemode3.jpg" alt="Citizen Dzordi 13.0">
         </div>
-        <p>Citizen Dzordi 13.0
-          | FPS
-        </p>
+        <p>Citizen Dzordi 13.0 | FPS</p>
         <div class="buttons">
           <button id="freemode3" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block" id="block4">
         <div class="imageContainer">
-          <img class="mainImage" src="./assets/freemode4.jpg" alt="Imagem 1">
+          <img class="mainImage" src="../../../public/assets/freemode4.jpg" alt="Citizen Dzordi 14.0">
         </div>
         <p>Citizen Dzordi 14.0</p>
         <div class="buttons">
           <button id="freemode4" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block" id="block5">
         <div class="imageContainer">
-          <img class="mainImage" src="./assets/freemode5.jpg" alt="Imagem 1">
+          <img class="mainImage" src="../../../public/assets/freemode5.jpg" alt="Citizen Dzordi 15.0">
         </div>
         <p>Citizen Dzordi 15.0</p>
         <div class="buttons">
           <button id="freemode5" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block" id="block1">
         <div class="imageContainer">
-            <img
-                class="mainImage"
-                src="./assets/hyper1.jpg"
-                alt="Imagem 1"
-            />
+          <img class="mainImage" src="../../../public/assets/hyper1.jpg" alt="Citizen Hyper v1.0">
         </div>
         <p>Citizen Hyper v1.0</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
-    <div class="block" id="block2">
+      </div>
+
+      <div class="block" id="block2">
         <div class="imageContainer">
-            <img
-                class="mainImage"
-                src="./assets/fpsplus1.jpg"
-                alt="Imagem 1"
-            />
+          <img class="mainImage" src="../../../public/assets/fpsplus1.jpg" alt="Citizen FpsPlus v1.0">
         </div>
         <p>Citizen FpsPlus v1.0</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
-    <div class="block" id="block3">
+      </div>
+
+      <div class="block" id="block3">
         <div class="imageContainer">
-            <img
-                class="mainImage"
-                src="./assets/styles1.jpg"
-                alt="Imagem 3"
-            />
+          <img class="mainImage" src="../../../public/assets/styles1.jpg" alt="Citizen Styles 1.0">
         </div>
         <p>Citizen Styles 1.0</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
+      </div>
 
-    <div class="block" id="block4">
+      <div class="block" id="block4">
         <div class="imageContainer">
-            <img
-                class="mainImage"
-                src="./assets/lottus1.jpg"
-                alt="Imagem 4"
-            />
+          <img class="mainImage" src="../../../public/assets/lottus1.jpg" alt="Citizen Lottus v2.0">
         </div>
         <p>Citizen Lottus v2.0</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
+      </div>
 
-    <div class="block" id="block5">
+      <div class="block" id="block5">
         <div class="imageContainer">
-            <img
-                class="mainImage"
-                src="./assets/prime1.jpg"
-                alt="Imagem 5"
-            />
+          <img class="mainImage" src="../../../public/assets/prime1.jpg" alt="Citizen Prime v2.0">
         </div>
         <p>Citizen Prime v2.0</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
+      </div>
 
-    <div class="block" id="block6">
+      <div class="block" id="block6">
         <div class="imageContainer">
-            <img
-                class="mainImage"
-                src="./assets/ghost1.jpg"
-                alt="Imagem 6"
-            />
+          <img class="mainImage" src="../../../public/assets/ghost1.jpg" alt="Citizen Ghost v1.0">
         </div>
         <p>Citizen Ghost v1.0</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
+      </div>
     </div>
   </section>
+
   <section id="skins">
     <div class="header3">Skins</div>
     <div class="container">
-      <!-- Conteúdo principal da página -->
       <div class="block">
-        <img src="./assets/skin1.png" alt="Imagem 1">
+        <img src="../../../public/assets/skin1.png" alt="Fivem Seven Nike">
         <p>Fivem Seven Nike | Silenciador</p>
         <div class="buttons">
           <button id="skin1" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block">
-        <img id="img1" src="./assets/skin2.png" alt="Imagem 1">
+        <img src="../../../public/assets/skin2.png" alt="Five Seven Nike Model Y">
         <p>Five Seven Nike Model Y</p>
         <div class="buttons">
           <button id="skin2" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block">
-        <img id="img1" src="./assets/skin3.png" alt="Imagem 1">
+        <img src="../../../public/assets/skin3.png" alt="Glock Red Dragon">
         <p>Glock Red Dragon</p>
         <div class="buttons">
           <button id="skin3" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block">
-        <img id="img1" src="./assets/skin4.png" alt="Imagem 1">
+        <img src="../../../public/assets/skin4.png" alt="Glock Purple Water">
         <p>Glock Purple Water</p>
         <div class="buttons">
           <button id="skin4" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block">
-        <img id="img1" src="./assets/skin5.png" alt="Imagem 1">
+        <img src="../../../public/assets/skin5.png" alt="M4MK2 Tokyo">
         <p>M4MK2 Tokyo | by EXA</p>
         <div class="buttons">
           <button id="skin5" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block">
-        <img id="img1" src="./assets/skin6.png" alt="Imagem 1">
+        <img src="../../../public/assets/skin6.png" alt="G3 Assault Rifle Delta">
         <p>G3 Assault Rifle Delta</p>
         <div class="buttons">
           <button id="skin6" class="install-button">Instalar</button>
         </div>
       </div>
+
       <div class="block">
-        <img src="./assets/skin13.png" alt="Imagem 1" />
+        <img src="../../../public/assets/skin13.png" alt="Five Seven Vlone">
         <p>Five Seven Vlone</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
-    <div class="block">
-        <img id="img1" src="./assets/skin14.png" alt="Imagem 1" />
+      </div>
+
+      <div class="block">
+        <img src="../../../public/assets/skin14.png" alt="AK Dark Purple">
         <p>AK Dark Purple</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
-    <div class="block">
-        <img id="img1" src="./assets/skin9.png" alt="Imagem 1" />
+      </div>
+
+      <div class="block">
+        <img src="../../../public/assets/skin9.png" alt="Glock Liberty City">
         <p>Glock Liberty City</p>
         <div class="buttons"> 
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
-    <div class="block">
-        <img id="img1" src="./assets/skin10.png" alt="Imagem 1" />
+      </div>
+
+      <div class="block">
+        <img src="../../../public/assets/skin10.png" alt="M4 MK2 Anime">
         <p>M4 MK2 Anime</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
-    <div class="block">
-        <img id="img1" src="./assets/skin11.png" alt="Imagem 1" />
+      </div>
+
+      <div class="block">
+        <img src="../../../public/assets/skin11.png" alt="Pack Red Dragon">
         <p>Pack Red Dragon</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
-    <div class="block">
-        <img id="img1" src="./assets/skin12.png" alt="Imagem 1" />
+      </div>
+
+      <div class="block">
+        <img src="../../../public/assets/skin12.png" alt="G3 Special Forces">
         <p>G3 Special Forces</p>
         <div class="buttons">
           <button id="buttonvip" class="install-button" onclick="openDiscord()"><i class="fa-solid fa-crown"></i></button>
         </div>
-    </div>
+      </div>
     </div>
   </section>
+
   <section id="tweaks">
     <div class="header3">
       <div class="title4">Tweaks</div>
     </div>
     <div class="container">
       <div class="block">
-        <img src="./assets/settingsbaixas.png" alt="Imagem 1">
+        <img src="../../../public/assets/settingsbaixas.png" alt="Low Settings">
         <p>Low Settings</p>
         <div class="buttons">
           <button class="install-button">Em breve..</button>
         </div>
       </div>
+
       <div class="block">
-        <img id="img1" src="./assets/settingsmedias.png" alt="Imagem 1">
+        <img src="../../../public/assets/settingsmedias.png" alt="Medium Settings">
         <p>Medium Settings</p>
         <div class="buttons">
           <button class="install-button">Em breve..</button>
         </div>
       </div>
+
       <div class="block">
-        <img id="img1" src="./assets/settingsaltas.png" alt="Imagem 1">
+        <img src="../../../public/assets/settingsaltas.png" alt="High Settings">
         <p>High Settings</p>
         <div class="buttons">
           <button class="install-button">Em breve..</button>
         </div>
       </div>
+
       <div class="block">
-        <img id="img1" src="./assets/cache.png" alt="Imagem 1">
+        <img src="../../../public/assets/cache.png" alt="Clean Cache">
         <p>Clean FiveM Cache</p>
         <div class="buttons">
           <button id="limparCache" class="install-button">Limpar</button>
         </div>
       </div>
+
       <div class="block">
-        <img id="img1" src="./assets/citizen.png" alt="Imagem 1">
+        <img src="../../../public/assets/citizen.png" alt="Reset Citizen">
         <p>Reset to Original Citizen</p>
         <div class="buttons">
           <button id="citizen" class="install-button">Resetar</button>
@@ -330,40 +322,35 @@
       </div>
     </div>
   </section>
+
   <section id="vip" class="vip">
     <div class="header2">
       <div class="title2">Panel VIP</div>
-      </div>
-      <div class="container">
-        <!-- Conteúdo principal da página -->
-        <div id="finalblock">
-          <div class="imageContainer">
-            <img class="mainImage" src="./assets/vippanel.png" alt="Imagem 1">
-          </div>
-          <div class="buttons" id="buttonsvip">
-            <button id="buttonvip" class="install-button" onclick="openytb()"><i class="fa-brands fa-youtube"></i></button>
-          </div>
+    </div>
+    <div class="container">
+      <div id="finalblock">
+        <div class="imageContainer">
+          <img class="mainImage" src="../../../public/assets/vippanel.png" alt="VIP Panel">
+        </div>
+        <div class="buttons" id="buttonsvip">
+          <button id="buttonvip" class="install-button" onclick="openytb()"><i class="fa-brands fa-youtube"></i></button>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-		<footer class="footer-distributed">
-			<div class="footer-right">
-				<a onclick="openDiscord()"><i class='bx bxl-discord' id="discord"></i></a>
-			</div>
-			<div class="footer-left">
-				<p>Dzordi Community &copy; 2023</p>
-			</div>
-		</footer>
-    <script src="imagesroll.js"></script>
-    <script src="renderer.js"></script>
+  <footer class="footer-distributed">
+    <div class="footer-right">
+      <a onclick="openDiscord()"><i class='bx bxl-discord' id="discord"></i></a>
+    </div>
+    <div class="footer-left">
+      <p>Dzordi Community &copy; 2023</p>
+    </div>
+  </footer>
+
+  <script src="../utils/image-carousel.util.js"></script>
+  <script src="../utils/external-links.util.js"></script>
+  <script src="renderer.js"></script>
 </body>
 </html>
 
-
-
-
-<!-- Agradecimentos Especiais
-Victor Ferreira
-Gabriel Menezes
-Prestes.zz -->
