@@ -6,7 +6,7 @@
 
 Professional FiveM mod management panel with Discord authentication. Install, manage, and uninstall graphic mods and weapon skins for FiveM with ease.
 
-![Dzordi Panel](public/assets/background.png)
+![Dzordi Panel](public/assets/demo.png)
 
 ---
 
