@@ -348,8 +348,42 @@
     </div>
   </footer>
 
+  <script>
+    const { ipcRenderer, shell } = require('electron');
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const minimizeBtn = document.getElementById('minimize-btn');
+      const maximizeBtn = document.getElementById('maximize-btn');
+      const closeBtn = document.getElementById('close-btn');
+
+      if (minimizeBtn) {
+        minimizeBtn.addEventListener('click', () => {
+          ipcRenderer.send('minimize');
+        });
+      }
+
+      if (maximizeBtn) {
+        maximizeBtn.addEventListener('click', () => {
+          ipcRenderer.send('maximize');
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          ipcRenderer.send('close');
+        });
+      }
+      
+      window.openDiscord = function() {
+        shell.openExternal('https://discord.gg/EbxB748zPF');
+      };
+      
+      window.openytb = function() {
+        shell.openExternal('https://www.youtube.com/watch?v=3TLbO7qddm4&ab_channel=DzordiCommunity');
+      };
+    });
+  </script>
   <script src="../utils/image-carousel.util.js"></script>
-  <script src="../utils/external-links.util.js"></script>
   <script src="renderer.js"></script>
 </body>
 </html>

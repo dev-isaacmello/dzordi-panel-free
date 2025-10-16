@@ -42,7 +42,9 @@ class WindowManager {
   }
 
   async createMainWindow() {
-    if (!this.authService.isAuthenticated()) {
+    const { APP } = require('../../shared/constants');
+    
+    if (!APP.DEV_MODE && !this.authService.isAuthenticated()) {
       return this.createLoginWindow();
     }
 

@@ -24,7 +24,26 @@
     </div>
   </div>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <script src="login-renderer.js"></script>
+  <script>
+    const { ipcRenderer } = require('electron');
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const closeBtn = document.getElementById('close-btn');
+      const discordLoginBtn = document.getElementById('discord-login');
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          ipcRenderer.send('close');
+        });
+      }
+
+      if (discordLoginBtn) {
+        discordLoginBtn.addEventListener('click', () => {
+          ipcRenderer.send('discordLogin');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
 

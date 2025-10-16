@@ -18,7 +18,8 @@ const DISCORD = {
 const APP = {
   NAME: 'Dzordi Panel',
   VERSION: '1.0.1',
-  SERVER_PORT: 3000
+  SERVER_PORT: 3000,
+  DEV_MODE: true
 };
 
 const WINDOW_CONFIG = {

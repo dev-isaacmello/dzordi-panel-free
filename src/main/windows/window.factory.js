@@ -23,19 +23,19 @@ class WindowFactory {
 
   static createLoadingWindow() {
     const window = this.createWindow('loading');
-    window.loadFile(path.join(__dirname, '../../../src/renderer/pages/loading.html'));
+    window.loadFile(path.join(__dirname, '../../renderer/pages/loading.html'));
     return window;
   }
 
   static createLoginWindow() {
     const window = this.createWindow('login');
-    window.loadFile(path.join(__dirname, '../../../src/renderer/pages/login.html'));
+    window.loadFile(path.join(__dirname, '../../renderer/pages/login.html'));
     return window;
   }
 
   static createMainWindow() {
     const window = this.createWindow('main');
-    window.loadFile(path.join(__dirname, '../../../src/renderer/pages/index.html'));
+    window.loadFile(path.join(__dirname, '../../renderer/pages/index.html'));
     return window;
   }
 
@@ -47,7 +47,7 @@ class WindowFactory {
 
   static createBackgroundWindow() {
     const window = this.createWindow('main', { show: false });
-    window.loadFile(path.join(__dirname, '../../../src/renderer/pages/index.html'));
+    window.loadFile(path.join(__dirname, '../../renderer/pages/index.html'));
     return window;
   }
 }
