@@ -1,10 +1,10 @@
 # Dzordi Panel
 
-[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/dzordi-community/dzordi-panel)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Versão](https://img.shields.io/badge/vers%C3%A3o-1.0.1-blue.svg)](https://github.com/dzordi-community/dzordi-panel)
+[![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-green.svg)](LICENSE)
 [![Electron](https://img.shields.io/badge/Electron-13.1.6-47848F.svg)](https://www.electronjs.org/)
 
-Professional FiveM mod management panel with Discord authentication. Install, manage, and uninstall graphic mods and weapon skins for FiveM with ease.
+Painel profissional de gerenciamento de mods para FiveM com autenticação Discord. Instale, gerencie e desinstale mods gráficos e skins de armas para FiveM com facilidade.
 
 ![Dzordi Panel](public/assets/demo.png)
 
@@ -31,20 +31,20 @@ Professional FiveM mod management panel with Discord authentication. Install, ma
 
 ### Autenticação e Segurança
 - **Discord OAuth2**: Sistema de login seguro integrado com Discord
-- **Controle de Acesso**: Verificação automática de roles do servidor Discord
+- **Controle de Acesso**: Verificação automática de cargos do servidor Discord
 - **Persistência de Sessão**: Token armazenado localmente com electron-store
 
 ### Gerenciamento de Mods
 - **Citizens (Gráficos)**: 5 versões gratuitas + 6 versões VIP premium
-- **Weapon Skins**: 6 skins gratuitas + 6 skins VIP premium
+- **Skins de Armas**: 6 skins gratuitas + 6 skins VIP premium
 - **Instalação/Desinstalação**: Sistema inteligente com detecção de estado
 - **Backup Automático**: Restauração de arquivos originais do FiveM
 
 ### Interface do Usuário
 - **Design Moderno**: Interface com efeitos glassmorphism e animações suaves
-- **Carrossel de Imagens**: Preview de variações dos mods ao passar o mouse
-- **Controles Personalizados**: Janela frameless com botões customizados
-- **Navegação Intuitiva**: Sidebar com acesso rápido às seções
+- **Carrossel de Imagens**: Visualização prévia de variações dos mods ao passar o mouse
+- **Controles Personalizados**: Janela sem moldura com botões customizados
+- **Navegação Intuitiva**: Barra lateral com acesso rápido às seções
 - **Responsivo**: Adaptável a diferentes resoluções
 
 ### Ferramentas Adicionais
@@ -97,7 +97,7 @@ npm start
    npm start
    ```
 
-### Build para Distribuição
+### Compilar para Distribuição
 
 ```bash
 npm run package-win
@@ -109,15 +109,28 @@ O executável será gerado em `dist/`
 
 ## ⚙️ Configuração
 
-### Discord OAuth (Opcional)
+### Modo Desenvolvedor
+
+Para testar sem autenticação Discord, edite `src/shared/constants/index.js`:
+
+```javascript
+const APP = {
+  NAME: 'Dzordi Panel',
+  VERSION: '1.0.1',
+  SERVER_PORT: 3000,
+  DEV_MODE: true  // true = pula autenticação, false = requer login
+};
+```
+
+### OAuth do Discord (Opcional)
 
 Para usar sua própria aplicação Discord:
 
-1. Acesse [Discord Developer Portal](https://discord.com/developers/applications)
+1. Acesse [Portal de Desenvolvedores do Discord](https://discord.com/developers/applications)
 2. Crie uma nova aplicação
 3. Configure OAuth2:
-   - **Redirect URI**: `http://localhost:3000/callback`
-   - **Scopes**: `identify`, `guilds`, `guilds.members.read`
+   - **URI de Redirecionamento**: `http://localhost:3000/callback`
+   - **Escopos**: `identify`, `guilds`, `guilds.members.read`
 4. Copie as credenciais
 5. Edite `src/shared/constants/index.js`:
 
@@ -127,7 +140,7 @@ const DISCORD = {
   CLIENT_SECRET: 'seu_client_secret',
   BOT_TOKEN: 'seu_bot_token',
   GUILD_ID: 'id_do_seu_servidor',
-  REQUIRED_ROLES: ['id_role_1', 'id_role_2']
+  REQUIRED_ROLES: ['id_cargo_1', 'id_cargo_2']
 };
 ```
 
@@ -148,7 +161,7 @@ const FIVEM_PATHS = {
 
 ### Primeira Execução
 
-1. **Login**: Clique no botão Discord para autenticar
+1. **Login**: Clique no botão Discord para autenticar (ou ative DEV_MODE)
 2. **Autorização**: Permita o acesso no navegador
 3. **Aguarde**: Carregamento automático da aplicação
 
@@ -161,7 +174,7 @@ const FIVEM_PATHS = {
 4. Aguarde a confirmação
 5. **Importante**: Apenas um citizen pode estar ativo por vez
 
-#### Weapon Skins
+#### Skins de Armas
 1. Navegue até a seção **Skins**
 2. Escolha a skin desejada
 3. Clique em **Instalar**
@@ -200,9 +213,9 @@ O projeto utiliza uma arquitetura limpa e modular baseada em padrões de design 
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Main Process (Node.js)                │
+│              Processo Principal (Node.js)                │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │
-│  │   Services   │  │   Windows    │  │    Config    │  │
+│  │   Serviços   │  │   Janelas    │  │ Configuração │  │
 │  │ ─────────────│  │ ─────────────│  │ ─────────────│  │
 │  │ AuthService  │  │WindowFactory │  │  AppConfig   │  │
 │  │ ModService   │  │WindowManager │  │  Constants   │  │
@@ -211,12 +224,12 @@ O projeto utiliza uma arquitetura limpa e modular baseada em padrões de design 
 │  └──────────────┘                                       │
 └─────────────────────────────────────────────────────────┘
                             │
-                    IPC Communication
+                  Comunicação IPC
                             │
 ┌─────────────────────────────────────────────────────────┐
-│               Renderer Process (Browser)                 │
+│           Processo Renderizador (Navegador)              │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │
-│  │  Components  │  │   Services   │  │    Utils     │  │
+│  │ Componentes  │  │   Serviços   │  │ Utilitários  │  │
 │  │ ─────────────│  │ ─────────────│  │ ─────────────│  │
 │  │ModInstaller  │  │ ModManager   │  │ButtonHandler │  │
 │  │              │  │ IPCService   │  │ImageCarousel │  │
@@ -225,9 +238,9 @@ O projeto utiliza uma arquitetura limpa e modular baseada em padrões de design 
 └─────────────────────────────────────────────────────────┘
 ```
 
-### Design Patterns
+### Padrões de Design
 
-#### Factory Pattern (Criação de Janelas)
+#### Padrão Factory (Criação de Janelas)
 ```javascript
 class WindowFactory {
   static createWindow(type, options) {
@@ -236,7 +249,7 @@ class WindowFactory {
 }
 ```
 
-#### Service Layer Pattern (Lógica de Negócio)
+#### Padrão Service Layer (Lógica de Negócio)
 ```javascript
 class AuthService {
   async fetchUserInfo(token) { }
@@ -245,7 +258,7 @@ class AuthService {
 }
 ```
 
-#### Singleton Pattern (Configuração)
+#### Padrão Singleton (Configuração)
 ```javascript
 class AppConfig {
   constructor() { this.config = {}; }
@@ -253,7 +266,7 @@ class AppConfig {
 module.exports = new AppConfig();
 ```
 
-#### Component Pattern (UI Modular)
+#### Padrão Component (UI Modular)
 ```javascript
 class ModInstallerComponent {
   initializeModButton(modId, modFile) { }
@@ -280,10 +293,10 @@ dzordi-panel/
 │   │   │   └── server.service.js  # Servidor OAuth
 │   │   ├── windows/               # Gerenciamento de janelas
 │   │   │   ├── window.factory.js  # Factory de janelas
-│   │   │   └── window.manager.js  # Lifecycle das janelas
-│   │   └── main.js                # Entry point
+│   │   │   └── window.manager.js  # Ciclo de vida das janelas
+│   │   └── main.js                # Ponto de entrada
 │   │
-│   ├── renderer/                  # Processo Renderer
+│   ├── renderer/                  # Processo Renderizador
 │   │   ├── components/
 │   │   │   └── mod-installer.component.js
 │   │   ├── pages/                 # Páginas HTML
@@ -316,7 +329,7 @@ dzordi-panel/
 └── README.md
 ```
 
-### Stack Tecnológico
+### Tecnologias Utilizadas
 
 | Tecnologia | Versão | Uso |
 |-----------|--------|-----|
@@ -337,7 +350,7 @@ dzordi-panel/
   - Serviços: `*.service.js`
   - Componentes: `*.component.js`
   - Utilitários: `*.util.js`
-  - Config: `*.config.js`
+  - Configuração: `*.config.js`
 
 #### Princípios
 - **Sem comentários**: Código auto-explicativo
@@ -354,18 +367,18 @@ npm run package-win    # Cria build apenas para Windows
 npm install            # Instala dependências
 ```
 
-### Debugging
+### Depuração
 
-1. Abra DevTools: `Ctrl + Shift + I`
+1. Abra as Ferramentas de Desenvolvedor: `Ctrl + Shift + I`
 2. Console: Visualize logs e erros
-3. Network: Monitore chamadas API
-4. Application: Inspecione localStorage
+3. Network: Monitore chamadas de API
+4. Application: Inspecione o localStorage
 
 ---
 
 ## 📁 Estrutura do Projeto
 
-### Main Process (`src/main/`)
+### Processo Principal (`src/main/`)
 
 Responsável pelo ciclo de vida da aplicação, operações do sistema e gerenciamento de janelas.
 
@@ -377,9 +390,9 @@ Responsável pelo ciclo de vida da aplicação, operações do sistema e gerenci
 
 **Gerenciamento de Janelas**:
 - `WindowFactory`: Cria janelas com configurações consistentes
-- `WindowManager`: Gerencia lifecycle e estados das janelas
+- `WindowManager`: Gerencia ciclo de vida e estados das janelas
 
-### Renderer Process (`src/renderer/`)
+### Processo Renderizador (`src/renderer/`)
 
 Gerencia a interface do usuário e interações.
 
@@ -392,9 +405,9 @@ Gerencia a interface do usuário e interações.
 - `WindowControls`: Controles da janela
 - `ExternalLinks`: Links externos
 
-### Shared (`src/shared/`)
+### Compartilhado (`src/shared/`)
 
-Código compartilhado entre main e renderer.
+Código compartilhado entre principal e renderizador.
 
 **Constants**: Todas as constantes da aplicação centralizadas
 
@@ -404,12 +417,12 @@ Código compartilhado entre main e renderer.
 
 ### Como Contribuir
 
-1. **Fork** o repositório
+1. **Faça um Fork** do repositório
 2. **Clone** seu fork
    ```bash
    git clone https://github.com/seu-usuario/dzordi-panel.git
    ```
-3. **Crie um branch** para sua feature
+3. **Crie uma branch** para sua funcionalidade
    ```bash
    git checkout -b feature/minha-feature
    ```
@@ -465,7 +478,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 
 ### ⚠️ Avisos Importantes
 
-**Credenciais Hardcoded**: O código contém credenciais fixas em `src/shared/constants/index.js`:
+**Credenciais Fixas no Código**: O código contém credenciais fixas em `src/shared/constants/index.js`:
 - Discord Client ID
 - Discord Client Secret  
 - Discord Bot Token
@@ -498,14 +511,14 @@ Para uso em produção:
    require('dotenv').config();
    ```
 
-4. **Nunca commite credenciais**
+4. **Nunca faça commit de credenciais**
    - Adicione `.env` no `.gitignore`
    - Revogue tokens expostos
-   - Use secret rotation
+   - Use rotação de secrets
 
-### Context Isolation
+### Isolamento de Contexto
 
-Para maior segurança, habilite context isolation:
+Para maior segurança, habilite o isolamento de contexto:
 
 ```javascript
 webPreferences: {
@@ -528,15 +541,15 @@ webPreferences: {
   
 - **YouTube**: [Dzordi Community](https://www.youtube.com/channel/DzordiCommunity)
   - Tutoriais em vídeo
-  - Demonstrações de features
+  - Demonstrações de funcionalidades
   - Atualizações
 
-### Issues
+### Problemas e Sugestões
 
-- **Bug Reports**: [GitHub Issues](https://github.com/dzordi-community/dzordi-panel/issues)
-- **Feature Requests**: Use o template de feature request
+- **Relatar Bugs**: [GitHub Issues](https://github.com/dzordi-community/dzordi-panel/issues)
+- **Solicitar Funcionalidades**: Use o template de feature request
 
-### FAQ
+### Perguntas Frequentes
 
 **P: O mod não está funcionando no servidor**  
 R: Alguns servidores bloqueiam mods. Verifique as regras do servidor.
@@ -556,24 +569,24 @@ R: Skins são client-side, mas alguns servidores podem ter proteções.
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-### MIT License
+### Licença MIT
 
 ```
 Copyright (c) 2023 Dzordi Community
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+É concedida permissão, gratuitamente, a qualquer pessoa que obtenha uma cópia
+deste software e arquivos de documentação associados (o "Software"), para lidar
+no Software sem restrições, incluindo, sem limitação, os direitos de usar,
+copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender
+cópias do Software, e permitir que as pessoas a quem o Software é fornecido
+o façam, sob as seguintes condições:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+O aviso de copyright acima e este aviso de permissão devem ser incluídos em todas
+as cópias ou partes substanciais do Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU
+IMPLÍCITA, INCLUINDO, MAS NÃO SE LIMITANDO ÀS GARANTIAS DE COMERCIALIZAÇÃO,
+ADEQUAÇÃO A UM DETERMINADO FIM E NÃO VIOLAÇÃO.
 ```
 
 ---
@@ -592,7 +605,7 @@ Agradecimentos especiais a todos os membros da comunidade Dzordi que ajudaram no
 
 ---
 
-## ⚠️ Disclaimer
+## ⚠️ Aviso Legal
 
 Este software modifica arquivos do FiveM. Use por sua conta e risco.
 
@@ -604,21 +617,22 @@ Este software modifica arquivos do FiveM. Use por sua conta e risco.
 
 ---
 
-## 📊 Versão
+## 📊 Informações da Versão
 
 **Versão Atual**: 1.0.1  
 **Data de Lançamento**: Outubro 2025  
 **Status**: Estável
 
-### Changelog
+### Histórico de Mudanças
 
 **v1.0.1** - Refatoração Completa
 - Implementação de arquitetura profissional
-- Adição de design patterns (Factory, Singleton, Service Layer)
+- Adição de padrões de design (Factory, Singleton, Service Layer)
 - Modularização completa do código
 - Centralização de constantes e configurações
 - Melhoria na organização de arquivos
 - Documentação completa
+- Modo de desenvolvimento sem autenticação
 
 **v1.0.0** - Lançamento Inicial
 - Sistema de autenticação Discord
